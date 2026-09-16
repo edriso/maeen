@@ -1,5 +1,11 @@
 [
   {
+    "id": "waking",
+    "title": "عند الاستيقاظ",
+    "description": "أول ما تفتح عينيك على نعمة الحياة",
+    "icon": "alarm"
+  },
+  {
     "id": "morning",
     "title": "أذكار الصباح",
     "description": "بداية يومك بذكر الله",

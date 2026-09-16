@@ -1,5 +1,62 @@
 # Verification
 
+## 2026-09-16 — waking collection, wider city list, timing audit
+
+- Collections grew from 61 to 66 reading cards and from five to six: a new waking
+  collection (3), morning 21, evening 19, prayer 12, sleep 17, general 8.
+- The waking collection is Hisn al-Muslim's opening chapter, all from the Sahihayn:
+  الحمد لله الذي أحيانا (Bukhari 6312), the dhikr for stirring in the night (Bukhari 1154)
+  and the ten closing verses of Al ʿImran (Muslim 763b, whose matn names العشر الآيات
+  الخواتم rather than quoting them, so 3:190-200 resolve from the pinned corpus).
+  General gained الباقيات الصالحات (Muslim 2695, unrestricted) and دعاء الكرب (Bukhari 6346).
+  Wording was sliced out of each narration programmatically, not retyped.
+- Bukhari 1154 stops where its quoted dhikr stops. The اللهم اغفر لي that follows is a
+  separate step in the narration and is reported in the context, not joined to the formula.
+- Refused the bedtime السجدة/الملك reading: Tirmidhi 2892 is graded ضعيف مقطوع by Al-Albani
+  and ضعيف by Zubair Ali Zai, so it is not even marfu' there. Recorded with its reason.
+- Cities went from 7 to 35, grouped by region in the picker, each with its own IANA zone
+  and the default calculation method for its region. Methods went from 6 to 12, adding
+  Umm al-Qura, Qatar, Kuwait, Tehran, Singapore and ISNA North America. Saudi cities now
+  default to Umm al-Qura, the official calendar there, instead of the Muslim World League.
+- Timing audit, all by running the real `suggestion`:
+  - 153,300 combinations (35 cities × 365 days × 12 hours) produced zero fallbacks to the
+    clock, and every city reaches morning, evening and general over a year.
+  - The same instant and city gives the same answer with the process timezone set to UTC,
+    Africa/Cairo, America/New_York, Pacific/Apia, Pacific/Chatham and Asia/Kathmandu, so
+    the result never depends on where the reader's device thinks it is. Spot-checked
+    windows are sensible: Cairo morning 06:00–13:00 local, London evening 17:00–20:00.
+  - Rebuilding the city's calendar date as a process-local Date was probed across twelve
+    process zones, including ones with midnight DST jumps, over a full year: the year,
+    month and day always survive.
+  - The clock never auto-selects waking, after-prayer or bedtime; those stay manual.
+- Backward compatibility was checked explicitly: every city id and method name that
+  existed before is still present, so a stored preference keeps working, and an unknown
+  id still resets to blank rather than to a wrong city.
+- Structural checks pass: unique city ids and labels, every zone usable by
+  Intl.DateTimeFormat, every city's method listed, every listed method carrying an Arabic
+  label, every collection having an icon and at least one card, and every card keeping a
+  grade, narrator, source URL and context. Unrestricted cards carry no target and
+  single-recitation cards carry exactly one.
+- `node scripts/content.mjs` (66 cards, digests, positions), the 28 committed tests,
+  strict TypeScript and oxlint all pass, as does the production static export and the
+  static-output check (25 files, RTL, local fonts).
+
+Not verified in this round:
+
+- No browser was available, so nothing was seen rendered. `waking-imran` is 1,844
+  characters, roughly three times the previous longest card; reading the stylesheet and
+  the fit-text hook says it floors at 18px and then scrolls inside `.reading-area`, which
+  is the documented fallback, but that was not watched happening. Look at that card, and
+  at the grouped city picker with 35 entries, before publishing.
+- `scripts/` and `package.json` are mounted read-only in this environment, so none of the
+  timing and structural checks above could be added to `scripts/core.test.mjs` where
+  `npm run check` would run them. They were run as a one-off harness against the real
+  modules. Fold them into the committed tests when that directory is writable.
+- The two candidates from the previous round are still out for the same reason: they need
+  a `verifiedLinks` line in `scripts/content.mjs`. See docs/content-policy.md.
+- Calculation methods are the published regional defaults, not a ruling that a given
+  mosque uses them; the reader can change the method and the Asr convention.
+
 ## 2026-09-16 — source audit and weak-narration disclosure
 
 - Re-read every one of the 43 existing records against its cited page before changing

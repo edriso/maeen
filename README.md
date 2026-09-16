@@ -26,14 +26,20 @@ BASE_PATH=/zaadi npm run preview
 
 ## Reading
 
-- Opens a time-appropriate collection; direct `#morning`, `#evening`, `#prayer`,
-  `#sleep`, and `#general` links override the automatic suggestion.
-- Without a chosen city: explicitly approximate device-clock suggestions. Morning is
-  04:00–12:00, evening 15:00–21:00, general remembrance otherwise.
-- With a supported city: local Adhan.js calculations choose morning from Fajr to Dhuhr
+- Opens a time-appropriate collection; direct `#waking`, `#morning`, `#evening`,
+  `#prayer`, `#sleep`, and `#general` links override the automatic suggestion.
+- Without a chosen city: explicitly approximate device-clock suggestions read from your
+  own device clock. Morning is 04:00–12:00, evening 15:00–21:00, general otherwise.
+- With a chosen city: local Adhan.js calculations choose morning from Fajr to Dhuhr
   and evening from Asr to Isha. Other times choose general remembrance. These are
   navigation windows, not religious deadlines. Method and Asr convention are editable.
-- After-prayer and bedtime collections are selected manually, never inferred from time.
+- 35 cities are offered, grouped by region, each with its own timezone and a default
+  calculation method for that region. Picking one is the only way to get calculated
+  times: the app never asks for your location and never guesses a city for you.
+  A city's own calendar date drives the calculation, so the answer is the same
+  wherever your device thinks it is.
+- Waking, after-prayer and bedtime collections are selected manually, never inferred
+  from the clock.
 - The screen carries one text and four small pieces of chrome: the wordmark, one button
   naming the open collection and your place in it, settings, and the read and navigation
   controls under the text. Everything else — timing explanation, sources, shortcuts —
@@ -70,8 +76,8 @@ BASE_PATH=/zaadi npm run preview
 
 ## Content and structure
 
-54 reading cards across five collections: 17 morning, 15 evening, 12 after prayer,
-17 before sleep, and 6 unrestricted daily remembrances. Some cards belong to more than
+66 reading cards across six collections: 3 on waking, 21 morning, 19 evening,
+12 after prayer, 17 before sleep, and 8 unrestricted daily remembrances. Some cards belong to more than
 one collection, and each remembrance stores its own position in every collection that
 contains it, so a text can sit ninth in the morning sequence and twelfth before sleep.
 The order follows the Hisn al-Muslim chapters. This is a verified selection, not an

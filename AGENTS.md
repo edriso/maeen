@@ -22,6 +22,10 @@ Correctness, readable Arabic, and a quiet reading experience come first.
   suggestions. Never claim the collection is exhaustive or scholar-reviewed.
 - Prayer calculations and clock heuristics are navigation aids, not religious rulings.
   Explain the fallback and offer manual selection. Do not silently infer a city.
+  Cities are the only location input: grow coverage by adding entries to the city table
+  with their own IANA zone and regional method, never by requesting geolocation or
+  calling a remote timing API. Never remove or rename a city id or a method name; a
+  stored preference holds one, and an unknown value drops the reader to the device clock.
 - No points, streaks, badges, celebrations, music, images of people, accounts, or tracking.
   A count control reports the narrated repetitions; it does not score worship.
 

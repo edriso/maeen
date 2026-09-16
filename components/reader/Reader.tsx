@@ -10,6 +10,7 @@ import {
   type PointerEvent,
 } from 'react';
 import {
+  AlarmClock,
   ArrowLeft,
   ArrowRight,
   Check,
@@ -48,12 +49,18 @@ import { Panel } from './Panel';
 import { newReading, readingReducer, isReadingTap } from '@/lib/reading.mjs';
 import { STORAGE } from '@/lib/appearance.mjs';
 const methodLabels: Record<string, string> = {
+  UmmAlQura: 'أم القرى، مكة المكرمة',
   Egyptian: 'الهيئة المصرية للمساحة',
   MuslimWorldLeague: 'رابطة العالم الإسلامي',
   Dubai: 'دبي',
-  Turkey: 'تركيا',
-  MoonsightingCommittee: 'لجنة رؤية الهلال',
+  Qatar: 'قطر',
+  Kuwait: 'الكويت',
+  Turkey: 'رئاسة الشؤون الدينية، تركيا',
+  Tehran: 'جامعة طهران',
   Karachi: 'جامعة العلوم الإسلامية، كراتشي',
+  Singapore: 'سنغافورة وجنوب شرق آسيا',
+  NorthAmerica: 'الجمعية الإسلامية لأمريكا الشمالية',
+  MoonsightingCommittee: 'لجنة رؤية الهلال',
 };
 const collectionLabels: Record<string, string> = {
   bukhari: 'صحيح البخاري',
@@ -75,12 +82,22 @@ const backgroundOptions = [
   { value: 'pattern', label: 'زخرفة', Icon: Grid2x2 },
 ] as const;
 const icons: Record<string, typeof Sun> = {
+  waking: AlarmClock,
   morning: Sunrise,
   evening: Sunset,
   prayer: Sun,
   sleep: Moon,
   general: Heart,
 };
+/** The city list is long, so the picker groups it the way the data already does. */
+const cityRegions = [
+  ...cities
+    .reduce((groups, city) => {
+      groups.set(city.region, [...(groups.get(city.region) ?? []), city]);
+      return groups;
+    }, new Map<string, (typeof cities)[number][]>())
+    .entries(),
+];
 type Gesture = {
   x: number;
   y: number;
@@ -773,10 +790,14 @@ export function Reader() {
                 }
               >
                 <option value="">ساعة الجهاز — اقتراح تقريبي</option>
-                {cities.map((city) => (
-                  <option key={city.id} value={city.id}>
-                    {city.label}
-                  </option>
+                {cityRegions.map(([region, group]) => (
+                  <optgroup key={region} label={region}>
+                    {group.map((city) => (
+                      <option key={city.id} value={city.id}>
+                        {city.label}
+                      </option>
+                    ))}
+                  </optgroup>
                 ))}
               </select>
               {preferences.city && (

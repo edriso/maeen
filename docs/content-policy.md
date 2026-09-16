@@ -16,8 +16,17 @@ Timing: default suggestions use the device clock and explicitly say they are app
 City selection enables local calculations using Adhan.js, with a selectable method and
 Asr convention. Fajr–Dhuhr suggests morning, Asr–Isha suggests evening; other times
 suggest general remembrance. These are product routing windows, not claims that reading
-outside them is invalid. Never automatically choose after-prayer or bedtime based on
-clock time alone. Manual selection is always available.
+outside them is invalid. Never automatically choose waking, after-prayer or bedtime based
+on clock time alone. Manual selection is always available.
+
+The city table in `lib/core.mjs` is the whole location story: each entry carries its own
+IANA zone, coordinates and the default calculation method for its region, and the picker
+groups entries by region because the list is long. Adding a city is how coverage grows;
+never add a geolocation request or a remote timing API. Never remove or rename a city id
+or a method name, because a stored preference holds one and an unknown value silently
+resets the reader to the device clock. Saudi cities use Umm al-Qura, the official
+calendar there; Egypt and Sudan use the Egyptian survey; the Gulf states, Turkey, Iran,
+the subcontinent, southeast Asia and North America each use their own regional method.
 
 Ibn Baz describes flexibility in morning/evening remembrance timing:
 https://binbaz.org.sa/fatwas/9949/وقت-اداء-اذكار-الصباح-والمساء
@@ -67,6 +76,12 @@ and the source panel says so. Do not present such wording as a verbatim quotatio
 The morning/evening collections are selected readings, not a fixed religious checklist.
 The card count depends on the selected narrations and whether separate prayers/surahs
 have separate reading cards. Never add texts just to reach a requested numerical total.
+
+Collections follow the Hisn al-Muslim chapter order, waking first. The waking collection
+covers that book's opening chapter from the Sahihayn: the praise on waking, the dhikr for
+stirring in the night, and the ten closing verses of Al ʿImran. `waking-imran` resolves
+eleven verses into one card and is by far the longest card in the app, so it relies on
+the reading area's own scrolling and on the fit-text floor rather than shrinking to fit.
 
 Additional source destinations are individually allowlisted in scripts/content.mjs.
 Sunnah.com combines Muslim 2709a with 2708b at the 2708b URL; preserve the actual

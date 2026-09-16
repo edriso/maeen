@@ -912,7 +912,7 @@
       "id": "general-hawqala",
       "title": "لا حول ولا قوة إلا بالله",
       "groups": {
-        "general": 4
+        "general": 5
       },
       "text": "لاَ حَوْلَ وَلاَ قُوَّةَ إِلاَّ بِاللَّهِ",
       "source": "bukhari:6384",
@@ -929,7 +929,7 @@
       "id": "general-istighfar",
       "title": "الاستغفار",
       "groups": {
-        "general": 5
+        "general": 6
       },
       "text": "أَسْتَغْفِرُ اللَّهَ",
       "source": "muslim:2702a",
@@ -948,7 +948,7 @@
       "id": "general-salawat",
       "title": "الصلاة على النبي",
       "groups": {
-        "general": 6
+        "general": 7
       },
       "text": "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا بَارَكْتَ عَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ",
       "source": "muslim:406a",
@@ -960,6 +960,98 @@
       "url": "https://sunnah.com/muslim:406a",
       "inspectedAt": "2026-09-05",
       "quoteScope": "Complete supplication or relevant Quran reference within a longer narration; editorial titles/context are not hadith."
+    },
+    {
+      "id": "waking-praise",
+      "title": "الحمد لله الذي أحيانا",
+      "groups": {
+        "waking": 1
+      },
+      "text": "الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ",
+      "source": "bukhari:6312",
+      "narrator": "حذيفة بن اليمان",
+      "grade": "صحيح؛ رواه البخاري",
+      "count": 1,
+      "countKind": "single-recitation",
+      "context": "تقال أول ما تستيقظ من نومك. لا عدد مكرر منصوص.",
+      "note": "Same narration carries the bedtime باسمك أموت وأحيا, which the project already shows from Bukhari 6324.",
+      "url": "https://sunnah.com/bukhari:6312",
+      "inspectedAt": "2026-09-16",
+      "quoteScope": "Complete supplication within a longer narration; titles and context are editorial."
+    },
+    {
+      "id": "waking-night-stir",
+      "title": "ذكر التعارّ من الليل",
+      "groups": {
+        "waking": 2
+      },
+      "text": "لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ، لَهُ الْمُلْكُ، وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَىْءٍ قَدِيرٌ‏.‏ الْحَمْدُ لِلَّهِ، وَسُبْحَانَ اللَّهِ، وَلاَ إِلَهَ إِلاَّ اللَّهُ، وَاللَّهُ أَكْبَرُ، وَلاَ حَوْلَ وَلاَ قُوَّةَ إِلاَّ بِاللَّهِ",
+      "source": "bukhari:1154",
+      "narrator": "عبادة بن الصامت",
+      "grade": "صحيح؛ رواه البخاري",
+      "count": 1,
+      "countKind": "single-recitation",
+      "context": "لمن استيقظ من الليل. وتمام الرواية أنه إن قال بعدها «اللهم اغفر لي» أو دعا استُجيب له، فإن توضأ وصلى قُبلت صلاته. لا عدد مكرر منصوص.",
+      "note": "Displayed text stops where the quoted dhikr stops. The اللهم اغفر لي that follows is a separate step in the narration, reported in the context rather than joined onto the formula.",
+      "url": "https://sunnah.com/bukhari:1154",
+      "inspectedAt": "2026-09-16",
+      "quoteScope": "Complete supplication within a longer narration; titles and context are editorial."
+    },
+    {
+      "id": "waking-imran",
+      "title": "خواتيم آل عمران",
+      "groups": {
+        "waking": 3
+      },
+      "quranRefs": [
+        "3:190-200"
+      ],
+      "source": "muslim:763b",
+      "narrator": "عبد الله بن عباس",
+      "grade": "صحيح؛ رواه مسلم",
+      "count": 1,
+      "countKind": "single-recitation",
+      "context": "قرأها النبي صلى الله عليه وسلم حين استيقظ من الليل قبل قيامه للصلاة. لا عدد مكرر منصوص.",
+      "note": "The narration names العشر الآيات الخواتم من سورة آل عمران rather than quoting them, so the ten verses 190-200 are resolved from the pinned Quran corpus.",
+      "url": "https://sunnah.com/muslim:763b",
+      "inspectedAt": "2026-09-16",
+      "quoteScope": "Complete supplication within a longer narration; titles and context are editorial."
+    },
+    {
+      "id": "general-four-words",
+      "title": "الباقيات الصالحات",
+      "groups": {
+        "general": 4
+      },
+      "text": "سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَلاَ إِلَهَ إِلاَّ اللَّهُ وَاللَّهُ أَكْبَرُ",
+      "source": "muslim:2695",
+      "narrator": "أبو هريرة",
+      "grade": "صحيح؛ رواه مسلم",
+      "count": null,
+      "countKind": "unrestricted",
+      "context": "ذكر مطلق لا عدد له، قال فيه النبي صلى الله عليه وسلم إنه أحب إليه مما طلعت عليه الشمس.",
+      "note": "Reported as a statement of worth; the formula is quoted inside it and carries no count.",
+      "url": "https://sunnah.com/muslim:2695",
+      "inspectedAt": "2026-09-16",
+      "quoteScope": "Complete supplication within a longer narration; titles and context are editorial."
+    },
+    {
+      "id": "general-distress",
+      "title": "دعاء الكرب",
+      "groups": {
+        "general": 8
+      },
+      "text": "لاَ إِلَهَ إِلاَّ اللَّهُ الْعَظِيمُ الْحَلِيمُ، لاَ إِلَهَ إِلاَّ اللَّهُ رَبُّ الْعَرْشِ الْعَظِيمِ، لاَ إِلَهَ إِلاَّ اللَّهُ رَبُّ السَّمَوَاتِ، وَرَبُّ الأَرْضِ، وَرَبُّ الْعَرْشِ الْكَرِيمِ",
+      "source": "bukhari:6346",
+      "narrator": "عبد الله بن عباس",
+      "grade": "صحيح؛ رواه البخاري",
+      "count": 1,
+      "countKind": "single-recitation",
+      "context": "كان النبي صلى الله عليه وسلم يقولها عند الكرب. لا عدد مكرر منصوص.",
+      "note": "Occasion is distress, not a clock time; it sits in the general collection, which is chosen by hand.",
+      "url": "https://sunnah.com/bukhari:6346",
+      "inspectedAt": "2026-09-16",
+      "quoteScope": "Complete supplication within a longer narration; titles and context are editorial."
     }
   ],
   "globalNotes": [
@@ -978,7 +1070,8 @@
       "Added texts were sliced from the inspected narration wording, not retyped, so no character is introduced by an editor.",
       "Morning/evening Kursi stays out: the narration tying it to morning and evening is graded ضعيف by Al-Albani (ضعيف الجامع 5769, ضعيف الترغيب 390, ضعيف الترمذي 2879), إسناده ضعيف by Al-Nawawi and ضعيف by Ibn Baz. Bedtime Kursi rests on Bukhari 2311 and is unaffected.",
       "Did not target a fixed collection size; entries were added or refused one at a time on their own source page.",
-      "2026-09-16: four widely practised morning/evening narrations that Al-Albani weakens (Abu Dawud 5069, 5072, 5073, 5084) are now shown with their grade printed on the card, following Ibn Baz and the jumhur, who act on a weak narration in fada'il. Abu Dawud 5081 (حسبي الله ×7) stays out because the same page grades it موضوع, which no such allowance covers. This is a disclosure choice, not a claim that the four are authentic."
+      "2026-09-16: four widely practised morning/evening narrations that Al-Albani weakens (Abu Dawud 5069, 5072, 5073, 5084) are now shown with their grade printed on the card, following Ibn Baz and the jumhur, who act on a weak narration in fada'il. Abu Dawud 5081 (حسبي الله ×7) stays out because the same page grades it موضوع, which no such allowance covers. This is a disclosure choice, not a claim that the four are authentic.",
+      "2026-09-16: added a waking collection from Hisn al-Muslim's opening chapter (Bukhari 6312, Bukhari 1154, Muslim 763b) and two general remembrances (Muslim 2695, Bukhari 6346). All five are in the Sahihayn. The bedtime السجدة والملك reading was refused: the chain on Tirmidhi 2892 is graded ضعيف مقطوع by Al-Albani, which is weaker than the weak-but-marfu' narrations this project shows."
     ],
     "excluded": [
       {
@@ -996,6 +1089,10 @@
       {
         "source": "https://dorar.net/h/UA2ZPwXk",
         "reason": "Morning/evening Kursi timing addition; see the note above for the full grade list. Deferred pending qualified review."
+      },
+      {
+        "source": "tirmidhi:2892",
+        "reason": "Reading السجدة and الملك before sleep. The inspected page grades this chain ضعيف مقطوع at Al-Albani and ضعيف at Zubair Ali Zai, so it is not even attributed to the Prophet here. The disclosure rule covers a weak marfu' narration, not a maqtu' one."
       }
     ]
   }
