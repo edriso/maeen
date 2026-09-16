@@ -13,8 +13,9 @@ Correctness, readable Arabic, and a quiet reading experience come first.
   against an inspected trusted source. Never manufacture morning/evening variants.
   Copy the wording out of the inspected narration; do not retype it from memory.
 - Appearing in a popular compilation is not evidence. Read the grade printed on the
-  narration's own page before adding a text, and record every rejection with its reason.
-  Several famous morning/evening entries are absent for exactly this reason.
+  narration's own page before adding a text, and show that grade on the card unchanged.
+  A weak narration may be included on the jumhur's practice in fada'il; a fabricated one
+  may not, and every rejection is recorded with its reason.
 - A count belongs to a specific narration and occasion. Never turn an unrestricted
   remembrance into a prescribed count. Do not infer the user's prayer is complete.
 - Clearly separate the original text, editorial instructions, source labels, and timing

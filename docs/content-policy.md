@@ -43,10 +43,20 @@ the source record. Never attach one count to a block of several formulas.
 ## Inclusion standard
 
 Being printed in a popular compilation is not evidence. Before a text is added, open the
-narration it is attributed to and read the grade shown there. Several entries that appear
-in nearly every printed morning/evening list are deliberately absent because the inspected
-page grades them weak or worse; they are listed under `expansionReview.excluded` in
-`data/sources.json` with the reason.
+narration it is attributed to and read the grade shown there. The grade that page shows is
+what the source panel displays, whatever it says.
+
+A narration the inspected page grades weak may be shown, because Ibn Baz and the jumhur act
+on a weak narration in fada'il, and several such texts are prayed daily from the printed
+Hisn al-Muslim. It is shown with its grade on the card, never relabelled or quietly
+promoted. A narration graded fabricated is not shown at all: no allowance covers موضوع.
+Abu Dawud 5069, 5072, 5073 and 5084 are in the collections on that basis; Abu Dawud 5081
+(حسبي الله ×7) is not, because the same page grades it موضوع.
+
+Entries still refused are listed under `expansionReview.excluded` in `data/sources.json`
+with the reason. Recording the grade is the point of the rule; the reader decides what to
+read, and the app never implies that a weak text is established or that skipping one is a
+shortfall.
 
 Where a narration reports a practice rather than quoting a formula (the hundredfold
 istighfar, the after-prayer istighfar), the displayed wording is the shortest known form
@@ -70,10 +80,21 @@ linked with that letter.
 reading: al-Ikhlas is shown with al-Falaq and an-Nas, and the record says so. Do not
 present that reading as extra wording inside the narration.
 
-Deferred records are documented in data/sources.json. Morning/evening Ayat al-Kursi has
-conflicting grading for the timing addition (Dorar aNzgr7xS and UA2ZPwXk); it is not added
-pending qualified review. The existing bedtime reading remains supported by Bukhari 2311.
-This selection does not rule on a reader's practice or claim consensus on grading.
+Deferred records are documented in data/sources.json. Morning/evening Ayat al-Kursi is not
+added: the narration that ties it to morning and evening is graded ضعيف by al-Albani
+(ضعيف الجامع 5769, ضعيف الترغيب 390, ضعيف الترمذي 2879, and ضعيف جدًا in هداية الرواة 2086),
+إسناده ضعيف by al-Nawawi, and ضعيف by Ibn Baz, with Tirmidhi and al-Baghawi calling it غريب.
+That is weaker than the entries admitted above, and the strongest wordings for it sit
+outside what this project can cite, so it waits for qualified review. The bedtime reading is
+unaffected and rests on Bukhari 2311. This selection does not rule on a reader's practice or
+claim consensus on grading.
+
+Two verified candidates are held back only for a plumbing reason, not a grading one:
+`أمسينا على فطرة الإسلام` (سبل الهدى والرشاد 7/258, https://dorar.net/h/wco7YVhF — the same
+narration is إسناده صحيح at al-Iraqi and حسن at al-Suyuti) and آية الكرسي دبر كل صلاة
+(الصحيح المسند 478, https://dorar.net/h/v2xoKlbX, and صحيح at al-Albani in صحيح الجامع 6464).
+Neither is in the six books Sunnah.com serves, so each needs its own line in the
+`verifiedLinks` allowlist in `scripts/content.mjs` before its record can be added.
 
 ## How source pages were read
 

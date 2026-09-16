@@ -81,11 +81,48 @@
       "quoteScope": "Complete supplication or relevant Quran reference within a longer narration; editorial titles/context are not hadith."
     },
     {
+      "id": "morning-witness",
+      "title": "الشهادة لله بالوحدانية",
+      "groups": {
+        "morning": 5
+      },
+      "text": "اللَّهُمَّ إِنِّي أَصْبَحْتُ أُشْهِدُكَ وَأُشْهِدُ حَمَلَةَ عَرْشِكَ وَمَلاَئِكَتَكَ وَجَمِيعَ خَلْقِكَ أَنَّكَ أَنْتَ اللَّهُ لاَ إِلَهَ إِلاَّ أَنْتَ وَأَنَّ مُحَمَّدًا عَبْدُكَ وَرَسُولُكَ",
+      "source": "abudawud:5069",
+      "narrator": "أنس بن مالك",
+      "grade": "ضعيف؛ ضعفه الألباني، وحسّنه زبير علي زئي",
+      "count": 4,
+      "countKind": "explicit",
+      "countLabel": "أربع مرات",
+      "context": "تقال حين يصبح وحين يمسي. نصت الرواية على أن من قالها أربعًا أعتقه الله من النار.",
+      "note": "Weak at Al-Albani; included with its grade displayed on the practice of Ibn Baz and the jumhur. Wording sliced from Abu Dawud 5069 itself: it has no وحدك لا شريك لك, unlike the printed Hisn form.",
+      "url": "https://sunnah.com/abudawud:5069",
+      "inspectedAt": "2026-09-16",
+      "quoteScope": "Complete supplication within a longer narration; titles and context are editorial."
+    },
+    {
+      "id": "morning-blessing",
+      "title": "أداء شكر النعمة",
+      "groups": {
+        "morning": 6
+      },
+      "text": "اللَّهُمَّ مَا أَصْبَحَ بِي مِنْ نِعْمَةٍ فَمِنْكَ وَحْدَكَ لاَ شَرِيكَ لَكَ فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ",
+      "source": "abudawud:5073",
+      "narrator": "عبد الله بن غنّام البياضي",
+      "grade": "ضعيف؛ ضعفه الألباني وشعيب الأرناؤوط",
+      "count": 1,
+      "countKind": "single-recitation",
+      "context": "من قالها حين يصبح فقد أدى شكر يومه. لا عدد مكرر منصوص.",
+      "note": "Weak on the inspected page; included with the grade shown. Sliced from Abu Dawud 5073, which has no أو بأحد من خلقك — that clause belongs to other printed versions, not this narration.",
+      "url": "https://sunnah.com/abudawud:5073",
+      "inspectedAt": "2026-09-16",
+      "quoteScope": "Complete supplication within a longer narration; titles and context are editorial."
+    },
+    {
       "id": "body-health",
       "title": "العافية في البدن",
       "groups": {
-        "morning": 5,
-        "evening": 5
+        "morning": 7,
+        "evening": 7
       },
       "text": "اللَّهُمَّ عَافِنِي فِي بَدَنِي اللَّهُمَّ عَافِنِي فِي سَمْعِي اللَّهُمَّ عَافِنِي فِي بَصَرِي لاَ إِلَهَ إِلاَّ أَنْتَ",
       "source": "abudawud:5090",
@@ -102,8 +139,8 @@
       "id": "refuge-disbelief",
       "title": "الاستعاذة من الكفر والفقر",
       "groups": {
-        "morning": 6,
-        "evening": 6
+        "morning": 8,
+        "evening": 8
       },
       "text": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ وَالْفَقْرِ اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ لاَ إِلَهَ إِلاَّ أَنْتَ",
       "source": "abudawud:5090",
@@ -121,8 +158,8 @@
       "id": "wellbeing-protection",
       "title": "العفو والعافية",
       "groups": {
-        "morning": 7,
-        "evening": 7
+        "morning": 9,
+        "evening": 9
       },
       "text": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَافِيَةَ فِي الدُّنْيَا وَالآخِرَةِ اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَفْوَ وَالْعَافِيَةَ فِي دِينِي وَدُنْيَاىَ وَأَهْلِي وَمَالِي اللَّهُمَّ اسْتُرْ عَوْرَاتِي وَآمِنْ رَوْعَاتِي اللَّهُمَّ احْفَظْنِي مِنْ بَيْنِ يَدَىَّ وَمِنْ خَلْفِي وَعَنْ يَمِينِي وَعَنْ شِمَالِي وَمِنْ فَوْقِي وَأَعُوذُ بِعَظَمَتِكَ أَنْ أُغْتَالَ مِنْ تَحْتِي",
       "source": "abudawud:5074",
@@ -140,8 +177,8 @@
       "id": "creator-refuge",
       "title": "فاطر السماوات والأرض",
       "groups": {
-        "morning": 8,
-        "evening": 8,
+        "morning": 10,
+        "evening": 10,
         "sleep": 12
       },
       "text": "اللَّهُمَّ فَاطِرَ السَّمَوَاتِ وَالأَرْضِ عَالِمَ الْغَيْبِ وَالشَّهَادَةِ رَبَّ كُلِّ شَىْءٍ وَمَلِيكَهُ أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ أَنْتَ أَعُوذُ بِكَ مِنْ شَرِّ نَفْسِي وَشَرِّ الشَّيْطَانِ وَشِرْكِهِ",
@@ -160,8 +197,8 @@
       "id": "bismillah-protection",
       "title": "بسم الله",
       "groups": {
-        "morning": 9,
-        "evening": 9
+        "morning": 11,
+        "evening": 11
       },
       "text": "بِسْمِ اللَّهِ الَّذِي لاَ يَضُرُّ مَعَ اسْمِهِ شَىْءٌ فِي الأَرْضِ وَلاَ فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ",
       "source": "abudawud:5088",
@@ -175,11 +212,30 @@
       "quoteScope": "Complete supplication or relevant Quran reference within a longer narration; editorial titles/context are not hadith."
     },
     {
+      "id": "contentment",
+      "title": "الرضا بالله ربًّا",
+      "groups": {
+        "morning": 12,
+        "evening": 12
+      },
+      "text": "رَضِينَا بِاللَّهِ رَبًّا وَبِالإِسْلاَمِ دِينًا وَبِمُحَمَّدٍ رَسُولاً",
+      "source": "abudawud:5072",
+      "narrator": "رجل خدم النبي صلى الله عليه وسلم",
+      "grade": "ضعيف؛ ضعفه الألباني، وحسّن إسناده زبير علي زئي",
+      "count": 1,
+      "countKind": "single-recitation",
+      "context": "تقال إذا أصبح وإذا أمسى. لا عدد مكرر منصوص في هذه الرواية.",
+      "note": "Weak at Al-Albani; included with its grade shown. Displayed wording is Abu Dawud 5072 itself (رضينا … رسولًا, no count). The familiar رضيت … نبيًّا ×3 is Tirmidhi 3389, evening only, also weak at Al-Albani; it is not merged in here.",
+      "url": "https://sunnah.com/abudawud:5072",
+      "inspectedAt": "2026-09-16",
+      "quoteScope": "Complete supplication within a longer narration; titles and context are editorial."
+    },
+    {
       "id": "living-sustainer",
       "title": "يا حي يا قيوم",
       "groups": {
-        "morning": 10,
-        "evening": 10
+        "morning": 13,
+        "evening": 13
       },
       "text": "يا حي يا قيوم برحمتك أستغيث، أصلح لي شأني كله، ولا تكلني إلى نفسي طرفة عين",
       "source": "targhib:661",
@@ -197,10 +253,28 @@
       "quoteScope": "Complete supplication within a longer narration; titles and context are editorial."
     },
     {
+      "id": "morning-sovereign",
+      "title": "ملك الله رب العالمين",
+      "groups": {
+        "morning": 14
+      },
+      "text": "أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ رَبِّ الْعَالَمِينَ اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ هَذَا الْيَوْمِ فَتْحَهُ وَنَصْرَهُ وَنُورَهُ وَبَرَكَتَهُ وَهُدَاهُ وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِيهِ وَشَرِّ مَا بَعْدَهُ",
+      "source": "abudawud:5084",
+      "narrator": "أبو مالك الأشعري",
+      "grade": "ضعيف؛ ضعفه الألباني",
+      "count": 1,
+      "countKind": "single-recitation",
+      "context": "تقال إذا أصبح. لا عدد مكرر منصوص.",
+      "note": "Weak on the inspected page; included with the grade shown, per Ibn Baz and the jumhur.",
+      "url": "https://sunnah.com/abudawud:5084",
+      "inspectedAt": "2026-09-16",
+      "quoteScope": "Complete supplication within a longer narration; titles and context are editorial."
+    },
+    {
       "id": "morning-fitrah",
       "title": "فطرة الإسلام",
       "groups": {
-        "morning": 11
+        "morning": 15
       },
       "text": "أصبَحْنا على فِطرةِ الإسلامِ، وكلمةِ الإخلاصِ، ودِينِ نبيِّنا مُحمَّدٍ، ومِلَّةِ أبينا إبراهيمَ حنيفًا مُسلِمًا، وما أنا مِن المُشرِكينَ.",
       "source": "nataij:2/401",
@@ -218,8 +292,8 @@
       "id": "timed-tasbih",
       "title": "سبحان الله وبحمده",
       "groups": {
-        "morning": 12,
-        "evening": 11
+        "morning": 16,
+        "evening": 15
       },
       "text": "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",
       "source": "muslim:2692",
@@ -237,8 +311,8 @@
       "id": "timed-tahlil",
       "title": "لا إله إلا الله وحده",
       "groups": {
-        "morning": 13,
-        "evening": 12
+        "morning": 17,
+        "evening": 16
       },
       "text": "لاَ إِلَهَ إِلاَّ اللَّهُ وَحْدَهُ لاَ شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَىْءٍ قَدِيرٌ",
       "source": "abudawud:5077",
@@ -256,7 +330,7 @@
       "id": "morning-creation-praise",
       "title": "عدد خلقه",
       "groups": {
-        "morning": 14
+        "morning": 18
       },
       "text": "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ عَدَدَ خَلْقِهِ وَرِضَا نَفْسِهِ وَزِنَةَ عَرْشِهِ وَمِدَادَ كَلِمَاتِهِ",
       "source": "muslim:2726a",
@@ -274,7 +348,7 @@
       "id": "morning-knowledge",
       "title": "علم نافع ورزق طيب",
       "groups": {
-        "morning": 15
+        "morning": 19
       },
       "text": "اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلاً مُتَقَبَّلاً",
       "source": "ibnmajah:925",
@@ -324,10 +398,65 @@
       "quoteScope": "Complete supplication or relevant Quran reference within a longer narration; editorial titles/context are not hadith."
     },
     {
+      "id": "evening-witness",
+      "title": "الشهادة لله بالوحدانية",
+      "groups": {
+        "evening": 5
+      },
+      "text": "اللَّهُمَّ إِنِّي أَمْسَيْتُ أُشْهِدُكَ وَأُشْهِدُ حَمَلَةَ عَرْشِكَ وَمَلاَئِكَتَكَ وَجَمِيعَ خَلْقِكَ أَنَّكَ أَنْتَ اللَّهُ لاَ إِلَهَ إِلاَّ أَنْتَ وَأَنَّ مُحَمَّدًا عَبْدُكَ وَرَسُولُكَ",
+      "source": "abudawud:5069",
+      "narrator": "أنس بن مالك",
+      "grade": "ضعيف؛ ضعفه الألباني، وحسّنه زبير علي زئي",
+      "count": 4,
+      "countKind": "explicit",
+      "countLabel": "أربع مرات",
+      "context": "تقال حين يمسي. نصت الرواية على أن من قالها أربعًا أعتقه الله من النار. الرواية تنص على المساء بلفظ مجمل، وصيغة المساء المعروضة هي التصريف المعروض في حصن المسلم لا زيادة في المتن.",
+      "note": "Narration itself says حين يصبح أو يمسي; only the verb inflection follows Hisn al-Muslim.",
+      "url": "https://sunnah.com/abudawud:5069",
+      "inspectedAt": "2026-09-16",
+      "quoteScope": "Complete supplication within a longer narration; titles and context are editorial."
+    },
+    {
+      "id": "evening-blessing",
+      "title": "أداء شكر النعمة",
+      "groups": {
+        "evening": 6
+      },
+      "text": "اللَّهُمَّ مَا أَمْسَى بِي مِنْ نِعْمَةٍ فَمِنْكَ وَحْدَكَ لاَ شَرِيكَ لَكَ فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ",
+      "source": "abudawud:5073",
+      "narrator": "عبد الله بن غنّام البياضي",
+      "grade": "ضعيف؛ ضعفه الألباني وشعيب الأرناؤوط",
+      "count": 1,
+      "countKind": "single-recitation",
+      "context": "من قالها حين يمسي فقد أدى شكر ليلته. لا عدد مكرر منصوص. الرواية تنص على المساء بلفظ مجمل، وصيغة المساء المعروضة هي التصريف المعروض في حصن المسلم لا زيادة في المتن.",
+      "note": "Narration says ومن قال مثل ذلك حين يمسي; only the verb inflection follows Hisn al-Muslim.",
+      "url": "https://sunnah.com/abudawud:5073",
+      "inspectedAt": "2026-09-16",
+      "quoteScope": "Complete supplication within a longer narration; titles and context are editorial."
+    },
+    {
+      "id": "evening-sovereign",
+      "title": "ملك الله رب العالمين",
+      "groups": {
+        "evening": 14
+      },
+      "text": "أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ رَبِّ الْعَالَمِينَ اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ هَذِهِ اللَّيْلَةِ فَتْحَهَا وَنَصْرَهَا وَنُورَهَا وَبَرَكَتَهَا وَهُدَاهَا وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِيهَا وَشَرِّ مَا بَعْدَهَا",
+      "source": "abudawud:5084",
+      "narrator": "أبو مالك الأشعري",
+      "grade": "ضعيف؛ ضعفه الألباني",
+      "count": 1,
+      "countKind": "single-recitation",
+      "context": "تقال إذا أمسى. لا عدد مكرر منصوص. الرواية تنص على المساء بلفظ مجمل، وصيغة المساء المعروضة هي التصريف المعروض في حصن المسلم لا زيادة في المتن.",
+      "note": "Narration says ثم إذا أمسى فليقل مثل ذلك; only the verb inflection follows Hisn al-Muslim.",
+      "url": "https://sunnah.com/abudawud:5084",
+      "inspectedAt": "2026-09-16",
+      "quoteScope": "Complete supplication within a longer narration; titles and context are editorial."
+    },
+    {
       "id": "evening-perfect-words",
       "title": "كلمات الله التامات",
       "groups": {
-        "evening": 13
+        "evening": 17
       },
       "text": "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ",
       "source": "muslim:2709a",
@@ -843,45 +972,30 @@
     "Quran must come from a licensed checksum-pinned corpus, not this research or AI memory."
   ],
   "expansionReview": {
-    "date": "2026-09-05",
+    "date": "2026-09-16",
     "notes": [
-      "Second expansion follows the Hisn al-Muslim chapter order for morning, evening, after-prayer and bedtime, but only for narrations whose grade on the inspected source page supports inclusion.",
+      "2026-09-05: the second expansion followed the Hisn al-Muslim chapter order for morning, evening, after-prayer and bedtime, admitting only narrations whose grade on the inspected page was sahih or hasan. The 2026-09-16 note below relaxes that to allow a weak narration whose grade is shown.",
       "Added texts were sliced from the inspected narration wording, not retyped, so no character is introduced by an editor.",
-      "Morning/evening Kursi deferred: Targhib 662 grades sound but Silsilah 7/743 calls the timing addition anomalous. Bedtime Kursi remains.",
-      "Did not target a fixed collection size; several well-known Hisn entries were left out because their source page grade does not support them."
+      "Morning/evening Kursi stays out: the narration tying it to morning and evening is graded ضعيف by Al-Albani (ضعيف الجامع 5769, ضعيف الترغيب 390, ضعيف الترمذي 2879), إسناده ضعيف by Al-Nawawi and ضعيف by Ibn Baz. Bedtime Kursi rests on Bukhari 2311 and is unaffected.",
+      "Did not target a fixed collection size; entries were added or refused one at a time on their own source page.",
+      "2026-09-16: four widely practised morning/evening narrations that Al-Albani weakens (Abu Dawud 5069, 5072, 5073, 5084) are now shown with their grade printed on the card, following Ibn Baz and the jumhur, who act on a weak narration in fada'il. Abu Dawud 5081 (حسبي الله ×7) stays out because the same page grades it موضوع, which no such allowance covers. This is a disclosure choice, not a claim that the four are authentic."
     ],
     "excluded": [
       {
-        "source": "abudawud:5069",
-        "reason": "اللهم إني أصبحت أشهدك (four times) is graded ضعيف by Al-Albani on the inspected page, despite being widely reprinted."
-      },
-      {
-        "source": "abudawud:5073",
-        "reason": "ما أصبح بي من نعمة graded ضعيف by Al-Albani on the inspected page; do not silently label sahih."
-      },
-      {
         "source": "abudawud:5081",
-        "reason": "حسبي الله ×7 is graded موضوع by Al-Albani on the inspected page; excluded despite its popularity in printed collections."
+        "reason": "حسبي الله ×7 is graded موضوع by Al-Albani on the inspected page. Weak narrations are now shown with their grade, but a fabricated one is not."
       },
       {
         "source": "abudawud:5083",
-        "reason": "Long plural فاطر variant graded ضعيف on inspected page; use sahih 5067."
-      },
-      {
-        "source": "abudawud:5084",
-        "reason": "أصبحنا وأصبح الملك لله رب العالمين graded ضعيف by Al-Albani on the inspected page."
-      },
-      {
-        "source": "abudawud:5072 / tirmidhi:3389",
-        "reason": "رضيت بالله ربًّا is graded ضعيف by Al-Albani in both inspected chains; graders disagree, so it is deferred rather than shown as established."
+        "reason": "Long plural فاطر variant graded ضعيف on inspected page; the sahih 5067 wording is displayed instead, so this adds nothing but a weaker chain for the same supplication."
       },
       {
         "source": "tabarani (الصلاة على النبي عشرًا صباحًا ومساءً)",
-        "reason": "Not in the inspected six-book pages; a timed count could not be verified against a source this project can link to."
+        "reason": "Graded ضعيف by Al-Albani in السلسلة الضعيفة 5788 (https://dorar.net/h/Zx6Sk8ey); he had graded it hasan in صحيح الجامع and retracted. Kept out on the grade, not for want of a linkable page. General salawat is served by general-salawat from Muslim 406a."
       },
       {
         "source": "https://dorar.net/h/UA2ZPwXk",
-        "reason": "Conflicting grading for the morning/evening timing addition; deferred pending qualified review."
+        "reason": "Morning/evening Kursi timing addition; see the note above for the full grade list. Deferred pending qualified review."
       }
     ]
   }

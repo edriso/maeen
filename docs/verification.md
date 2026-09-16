@@ -1,5 +1,57 @@
 # Verification
 
+## 2026-09-16 — source audit and weak-narration disclosure
+
+- Re-read every one of the 43 existing records against its cited page before changing
+  anything. All 43 resolve: the number exists, the stored Arabic is inside that narration,
+  and the stored grade matches the grade the page prints. Two records whose text is not a
+  contiguous quotation were checked by hand and are correct as documented: `evening-kingdom`
+  concatenates the two halves of Muslim 2723b across its `قال أراه قال فيهن`, and
+  `post-prayer-tasbih` renders the narrated actions سبّح/حمد/كبّر, which its own note states.
+- Cross-read the Abu Dawud grade list for every narration the project uses or refuses.
+  Every included one is sahih or hasan; every refused one is weak or worse, exactly as
+  `expansionReview.excluded` recorded: 5069, 5072, 5073, 5083, 5084 = ضعيف, 5081 = موضوع.
+- Collections grew from 54 to 61 reading cards: morning 17→21, evening 15→19; prayer 12,
+  sleep 17 and general 6 are unchanged. Morning and evening now follow the Hisn al-Muslim
+  chapter order with fewer gaps in it.
+- Added Abu Dawud 5069, 5072, 5073 and 5084 under the disclosure rule in
+  docs/content-policy.md, each card showing its own ضعيف grade. Abu Dawud 5081 stays out on
+  موضوع. Wording for all four was sliced out of the mirrored narration programmatically, so
+  it carries the narration's own text rather than the printed Hisn wording: 5069 has no
+  وحدك لا شريك لك, 5073 has no أو بأحد من خلقك, and 5072 reads رضينا … رسولًا with no ×3.
+  Each record says so. The Tirmidhi 3389 رضيت … نبيًّا variant is named but not merged in.
+- Evening forms for 5069, 5073 and 5084 follow the existing `morning-kingdom` precedent:
+  each narration states the evening timing itself (حين يصبح أو يمسي / مثل ذلك حين يمسي /
+  ثم إذا أمسى فليقل مثل ذلك) and only the verb inflection follows Hisn al-Muslim. Each
+  record's context and note say that plainly.
+- Corrected one wrong exclusion reason. The morning/evening salawat ×10 was recorded as
+  unciteable; it is in fact graded ضعيف by al-Albani in السلسلة الضعيفة 5788
+  (https://dorar.net/h/Zx6Sk8ey), after he had graded it hasan and retracted. The entry now
+  states the grade.
+- Morning/evening Ayat al-Kursi stays deferred, now on a fuller record: ضعيف at al-Albani in
+  four places, إسناده ضعيف at al-Nawawi, ضعيف at Ibn Baz, غريب at Tirmidhi and al-Baghawi.
+- Dorar and Sunnah.com both refuse automated requests, so their pages were read through the
+  same public reader proxy the earlier round used, and cross-read against the Arabic mirror
+  of the Sunnah.com corpus matched by in-book reference. The two readings agreed everywhere
+  they overlapped.
+- `node scripts/content.mjs` (61 cards, digests, positions), 28 focused tests, strict
+  TypeScript and oxlint all pass, as does the production static export with its base path
+  and the static-output check (25 files, RTL, local fonts).
+
+Not verified in this round:
+
+- No browser was available, so nothing was seen rendered. The four added cards and the
+  reordered morning/evening sequences were not viewed in the running app at any width, and
+  no keyboard, mobile-emulation, screen-reader or 200% zoom pass was made. Re-run the
+  earlier device and keyboard checks before publishing.
+- `scripts/` is mounted read-only in this environment, so the `verifiedLinks` allowlist
+  could not be touched. Two candidates that verified cleanly are therefore still absent:
+  `أمسينا على فطرة الإسلام` and آية الكرسي دبر كل صلاة. Both are written up in
+  docs/content-policy.md with their pages and grades; each needs one allowlist line.
+- Reading source pages is transcription against the cited pages, not qualified scholarly
+  review, and admitting a weak narration is a disclosure decision, not a ruling that it is
+  authentic. The site does not claim that status.
+
 ## 2026-09-05 — reader, content and appearance
 
 - Source researcher inspected the Arabic source pages and repetition contexts before
