@@ -108,11 +108,11 @@ site.config.mjs       one repository-aware base-path definition
 
 The generated Sites scaffold uses React, TypeScript, Vinext and Vite. Static export
 requires no server after deployment. The requested hosting target is GitHub Pages; no
-Sites project or other hosting account is created. Everything the scaffold supplied and
-this reader never loads has been removed: the Cloudflare and Sites deploy plugins, the
-shadcn packages, config and empty `components/ui`, the chart, calendar, carousel and
-date libraries, the `cn` helper, and the Fontsource packages the checked-in font subsets
-no longer need. What runs the app is what is left: React, Vinext, Adhan.js, Lucide icons,
+Sites project or other hosting account is created, and no hosting declaration for one is
+kept. Everything the scaffold supplied and this reader never loads has been removed: the
+Cloudflare and Sites deploy plugins with their hosting config, the shadcn packages,
+config and empty `components/ui`, the chart, calendar, carousel and date libraries, the
+`cn` helper, and the Fontsource packages the checked-in font subsets no longer need. What runs the app is what is left: React, Vinext, Adhan.js, Lucide icons,
 the local Cairo and Amiri Quran subsets in `public/fonts`, and the Tailwind, oxlint,
 oxfmt, TypeScript and Vite toolchain.
 

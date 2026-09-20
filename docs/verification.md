@@ -32,10 +32,16 @@
   selects, the last card still reads «تم بفضل الله», and both font subsets still return
   200 with their licence files beside them.
 
-Not verified in this round:
-
-- `.openai/hosting.json` and the `.openai/` directory remain. They declare an output
-  directory and carry no code or packages, so they were left rather than swept up.
+- `.openai/hosting.json` and its directory went too, in a follow-up. The file declared
+  the static output directory for Sites hosting, which this project does not publish to;
+  nothing in the repo reads it, and `npm run check`, `npm run build` and the
+  static-output check pass without it.
+- A file-by-file audit of `git ls-files` closes this out. Every tracked file is reached:
+  each `lib/` module is imported by the reader or a script, each `scripts/` file is an
+  npm script, each `public/licenses/` text belongs to a package or font still shipped,
+  and `next.config.ts` and `vite.config.ts` are both live build config. The generic
+  ignore lines in `.gitignore` (`.vercel`, `/outputs/`, `/work/`, `.claude/`) are kept:
+  they guard against committing scratch output, and are not dependencies of anything.
 
 ## 2026-09-20 — the sharp advisory, fixed by deleting what pulled it in
 
