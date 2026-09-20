@@ -38,6 +38,9 @@ See docs/content-policy.md.
 
 Cairo Variable and Amiri Quran fonts: SIL Open Font License 1.1.
 See public/licenses/cairo.txt and public/licenses/amiri-quran.txt.
+The subsets in public/fonts were taken from @fontsource-variable/cairo 5.3.0 and
+@fontsource/amiri-quran 5.3.0 and are checked in, so neither package is a dependency.
+Regenerating a subset means installing that package again at the version recorded here.
 Lucide icons: ISC, public/licenses/lucide.txt.
 Adhan.js prayer-time calculations: MIT, public/licenses/adhan.txt.
 The scaffold and its package dependencies retain their own licenses.

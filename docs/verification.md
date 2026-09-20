@@ -1,5 +1,42 @@
 # Verification
 
+## 2026-09-20 — every scaffold package the reader never loads
+
+- Following the security fix, the rest of the unused scaffold went too. Every import in
+  `app/`, `components/`, `lib/`, `scripts/` and the config files was listed first, and
+  only `adhan`, `lucide-react`, `react`, `react-dom` and `vinext` are reached from
+  `dependencies`.
+- Removed: `@base-ui/react`, `@shadcn/react`, `shadcn`, `class-variance-authority`,
+  `cmdk`, `date-fns`, `embla-carousel-react`, `input-otp`, `react-day-picker`,
+  `react-resizable-panels`, `recharts`, `tw-animate-css`, `clsx`, `tailwind-merge`,
+  `react-server-dom-webpack`, `@fontsource-variable/cairo` and `@fontsource/amiri-quran`,
+  along with `components.json`, the empty `components/ui/` and `lib/utils.ts`.
+- Two of those needed checking rather than grepping. `lib/utils.ts` exported `cn`, the
+  only consumer of `clsx` and `tailwind-merge`, and nothing imported `cn`, so the helper
+  and both libraries went together with the shadcn config that pointed at them.
+  `react-server-dom-webpack` was declared directly but is also required by `vinext` and
+  `@vitejs/plugin-rsc`, so dropping the declaration leaves it installed and RSC intact.
+- The Fontsource packages were not building anything: `public/fonts` holds the three
+  checked-in subsets and `scripts/prepare-output.mjs` only copies `dist/client`. Their
+  versions (both 5.3.0) are now recorded in NOTICE and `public/NOTICE.txt`, so the
+  provenance of the subsets survives the removal; the OFL texts were already vendored in
+  `public/licenses`.
+- A clean `npm ci` installs 170 packages, down from 526, and the lockfile holds 288
+  entries, down from 642 after the security fix and 701 before it. Still 0
+  vulnerabilities.
+- Verified after the trim, with `tsconfig.tsbuildinfo` deleted: `npm run check` (60
+  cards, 30 tests, strict TypeScript, oxlint), `npm run build`, the static-output check
+  (25 files) and `oxfmt --check` all pass. The built output was driven in the browser:
+  the merged surah card still measures three blocks at 19px, double and triple clicks
+  still count two and three with no selection, a bounce is still dropped, dragging still
+  selects, the last card still reads «تم بفضل الله», and both font subsets still return
+  200 with their licence files beside them.
+
+Not verified in this round:
+
+- `.openai/hosting.json` and the `.openai/` directory remain. They declare an output
+  directory and carry no code or packages, so they were left rather than swept up.
+
 ## 2026-09-20 — the sharp advisory, fixed by deleting what pulled it in
 
 - Dependabot flagged `sharp` <0.35.4 as high (GHSA-rgj7-g3m4-5g8c: libheif
@@ -37,8 +74,8 @@
 
 Not verified in this round:
 
-- The shadcn packages in `dependencies` are unreferenced too, but the README records
-  keeping them on purpose, so they were left where they are rather than swept up here.
+- The shadcn packages in `dependencies` are unreferenced too, but the README recorded
+  keeping them on purpose, so they were left here and removed in the entry above.
 
 ## 2026-09-20 — the last card's Next button
 
