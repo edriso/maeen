@@ -62,6 +62,12 @@ Correctness, readable Arabic, and a quiet reading experience come first.
   Space activation on other controls; suppress held-Space scrolling/repeated counting.
 - Reject held keys, accidental rapid taps, long presses, selection and drags (including
   out-and-back drags) as read actions. Track tap movement separately from swipe intent.
+- One activation is one repetition, so a double click or double tap records two and a
+  triple records three. The browser's own click numbering is what tells a deliberate
+  sequence from a bounce: a repeat the browser did not count into the sequence is still
+  dropped inside the bounce window. The later clicks of a sequence must not select a
+  word either, because a highlight both hides the text and blocks its own read; keep
+  drag selection working, which is how a reader copies a dhikr.
 - Default mode provides visible navigation buttons. The user's optional minimal mode
   hides supporting text/buttons, including Next/Previous, but retains the text, repetition
   count, and a 44px settings control. Settings must expose sources, undo and collections.

@@ -59,6 +59,8 @@ BASE_PATH=/maeen npm run preview
   Native browser zoom remains enabled.
 - The reading area is the read button: a tap anywhere in that field, or the read button
   below it, records one repetition, then advances when the narrated count is complete.
+  A double click or double tap is two repetitions and selects nothing; dragging across
+  the text still selects it.
   A quiet fill inside the read button shows progress through that count.
   Undo restores the previous count and card; the last card never wraps. A single-read
   label differs from prescribed repetition. Unrestricted dhikr has no target.

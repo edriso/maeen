@@ -1,5 +1,38 @@
 # Verification
 
+## 2026-09-20 — a double click reads twice and selects nothing
+
+- Double clicking the text used to select a word, and the highlight then blocked the read
+  it was meant to record, so the gesture both defaced the card and did nothing. The later
+  clicks of a sequence now `preventDefault()` on mousedown, which is the one default they
+  have; drag selection is untouched, so copying a dhikr still works.
+- The 250ms bounce window was the second half of the problem: it dropped the second click
+  as noise. `acceptsRead` in `lib/reading.mjs` now takes the click's number in its
+  sequence, and a click the browser counted as the second or later skips the window. A
+  repeat the browser did not count into a sequence is still dropped, which is what the
+  window was for. Six cases are covered in the committed tests.
+- Checked in the built output. On a hundred-count card: double click +2, triple click +3,
+  single click +1, two slow clicks +2, and two separate clicks 40ms apart +1, the second
+  dropped as a bounce. No selection appears in any of them; a drag across the text still
+  selects (13 characters) and still does not count.
+- A touch double tap behaves the same: the two taps report click numbers 1 and 2 and
+  record two readings. A lone tap records one.
+- On a single-recitation card the two readings land on two cards: a double click on
+  الحمد لله الذي أحيانا reads it, advances, reads ذكر التعارّ من الليل and advances again.
+  That follows from one activation being one repetition, and undo walks back both, one
+  card per press. It is worth knowing before double clicking out of habit.
+- Held Space still records nothing, and the read button under the text counts twice on a
+  double click like the reading area does.
+- `npm run check` (60 cards, 30 tests, strict TypeScript, oxlint), `npm run build`, the
+  static-output check and `oxfmt --check` pass.
+
+Not verified in this round:
+
+- Chromium only. Safari and Firefox group clicks into sequences with their own
+  thresholds, and a trackpad or an assistive pointer may report them differently.
+- Nobody tried it with a real finger, so whether a double tap on a phone is deliberate
+  often enough for this to feel right in the hand is still unknown.
+
 ## 2026-09-20 — the reading area is the read button
 
 - The read control was a button wrapped around the letters inside a plain scrolling

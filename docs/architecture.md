@@ -33,7 +33,8 @@ the reading area gets the space instead.
 - Time is resolved on opening a collection/returning from a background tab, but an active
   reading is never interrupted by an automatic collection change.
 - A pure reading reducer makes counting and auto-advance atomic. Undo reverses both.
-  Pointer movement guards separate deliberate text taps from scroll, drag and swipe.
+  Pointer movement guards separate deliberate text taps from scroll, drag and swipe, and
+  the browser's click numbering separates a deliberate double click from a bounce.
   The reading area is the button, so the whole field is the target; it remains mounted
   across cards, preserving keyboard focus.
 - Preferences use defensive, versioned localStorage access. Counts are memory-only and

@@ -47,7 +47,12 @@ import {
   swipeDirection,
 } from '@/lib/core.mjs';
 import { Panel } from './Panel';
-import { newReading, readingReducer, isReadingTap } from '@/lib/reading.mjs';
+import {
+  newReading,
+  readingReducer,
+  isReadingTap,
+  acceptsRead,
+} from '@/lib/reading.mjs';
 import { STORAGE } from '@/lib/appearance.mjs';
 const methodLabels: Record<string, string> = {
   UmmAlQura: 'أم القرى، مكة المكرمة',
@@ -280,13 +285,16 @@ export function Reader() {
   };
   const navigate = (delta: number) =>
     dispatch({ type: 'navigate', index: index + delta, items: selectedItems });
-  const recordReading = useCallback(() => {
-    if (!ready || panel || window.getSelection()?.toString()) return;
-    const now = performance.now();
-    if (now - lastReadAt.current < 250) return;
-    lastReadAt.current = now;
-    dispatch({ type: 'read', items: selectedItems });
-  }, [ready, panel, selectedItems]);
+  const recordReading = useCallback(
+    (clicks = 1) => {
+      if (!ready || panel || window.getSelection()?.toString()) return;
+      const now = performance.now();
+      if (!acceptsRead(now - lastReadAt.current, clicks)) return;
+      lastReadAt.current = now;
+      dispatch({ type: 'read', items: selectedItems });
+    },
+    [ready, panel, selectedItems],
+  );
   const changeZoom = (value: number) =>
     setPreferences((current) => ({ ...current, zoom: clampZoom(value) }));
   useWebMcp(
@@ -423,8 +431,14 @@ export function Reader() {
           if (event.repeat && (event.key === 'Enter' || event.key === ' '))
             event.preventDefault();
         }}
+        onMouseDown={(event) => {
+          // The second click of a sequence would select a word, which hides the
+          // text under a highlight and blocks the read it is meant to record.
+          if (event.detail > 1) event.preventDefault();
+        }}
         onClick={(event) => {
-          if (event.detail === 0 || tapAllowed.current) recordReading();
+          if (event.detail === 0 || tapAllowed.current)
+            recordReading(event.detail);
           tapAllowed.current = false;
         }}
       >
@@ -477,7 +491,7 @@ export function Reader() {
               } as CSSProperties
             }
             disabled={(complete || item.count === null) && last}
-            onClick={recordReading}
+            onClick={(event) => recordReading(event.detail)}
             onKeyDown={(event) => {
               if (event.repeat && (event.key === 'Enter' || event.key === ' '))
                 event.preventDefault();

@@ -1,6 +1,12 @@
 import { runInNewContext } from 'node:vm';
 import { bootstrapAppearance, STORAGE } from '../lib/appearance.mjs';
-import { newReading, readingReducer, isReadingTap } from '../lib/reading.mjs';
+import {
+  newReading,
+  readingReducer,
+  isReadingTap,
+  acceptsRead,
+  READ_INTERVAL,
+} from '../lib/reading.mjs';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import {
@@ -116,6 +122,21 @@ test('navigation does not wrap at either end', () => {
 });
 test('a narration suffix survives visible formatting', () =>
   assert.equal(referenceNumber('597a'), '٥٩٧a'));
+test('a double click counts twice, a bounce does not', () => {
+  // The browser numbers the clicks of one deliberate sequence, so its later
+  // clicks are deliberate too, and skip the bounce window.
+  assert.equal(acceptsRead(40, 2), true);
+  assert.equal(acceptsRead(0, 3), true);
+  // A lone click inside the window is the bounce the window exists to drop.
+  assert.equal(acceptsRead(40, 1), false);
+  assert.equal(acceptsRead(READ_INTERVAL - 1, 1), false);
+  assert.equal(acceptsRead(READ_INTERVAL, 1), true);
+  // Keyboard activation reports no click sequence and keeps the window.
+  assert.equal(acceptsRead(40, 0), false);
+  assert.equal(acceptsRead(READ_INTERVAL, 0), true);
+  // A default call is a single click.
+  assert.equal(acceptsRead(40), false);
+});
 test('surahs read together share one card but not one block', () => {
   const verses = ['112:1', '112:2', '113:1', '114:1', '114:2'].map(
     (reference) => ({ reference }),
