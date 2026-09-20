@@ -79,10 +79,12 @@ BASE_PATH=/maeen npm run preview
 
 ## Content and structure
 
-66 reading cards across six collections: 3 on waking, 21 morning, 19 evening,
-12 after prayer, 17 before sleep, and 8 unrestricted daily remembrances. Some cards belong to more than
-one collection, and each remembrance stores its own position in every collection that
-contains it, so a text can sit ninth in the morning sequence and twelfth before sleep.
+60 reading cards across six collections: 3 on waking, 19 morning, 17 evening, 10 after
+prayer, 15 before sleep, and 8 unrestricted daily remembrances. Surahs a narration names
+together stay on one card, so the repetition it asks for covers the whole reading rather
+than each surah. Some cards belong to more than one collection, and each remembrance
+stores its own position in every collection that contains it, so a text can sit ninth in
+the morning sequence and twelfth before sleep.
 The order follows the Hisn al-Muslim chapters. This is a verified selection, not an
 exhaustive book of adhkar. Text, attribution, authenticity and count context are stored
 separately from the collection layout.

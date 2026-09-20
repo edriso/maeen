@@ -2,7 +2,7 @@
   "items": [
     {
       "id": "three-surahs",
-      "title": "الإخلاص والفلق والناس",
+      "title": "قُلْ هُوَ اللَّهُ أَحَدٌ وَالْمُعَوِّذَتَيْنِ",
       "groups": {
         "morning": 1,
         "evening": 1
@@ -17,10 +17,10 @@
       "grade": "حسن؛ حسنه الألباني",
       "count": 3,
       "countKind": "explicit",
-      "context": "تقرأ كل سورة ثلاث مرات حين تصبح وحين تمسي.",
-      "note": "Reference-only Quran; load full exact surah texts from pinned Quran corpus. Can split into three cards each with count3, but do not imply a mandatory order beyond the narration.",
+      "context": "تقرؤها كلها ثلاث مرات حين تمسي وحين تصبح، كما في لفظ الرواية: «قل هو الله أحد والمعوذتين حين تمسي وحين تصبح ثلاث مرات». والثلاث للقراءة كاملة، لا لكل سورة على حدة.",
+      "note": "Reference-only Quran; load full exact surah texts from pinned Quran corpus. The narration names the three together and puts ثلاث مرات on that whole reading, so they share one card and one count; splitting them into three cards with three counts each would triple what the matn asks for.",
       "url": "https://sunnah.com/abudawud:5082",
-      "inspectedAt": "2026-09-05",
+      "inspectedAt": "2026-09-20",
       "quoteScope": "Complete supplication or relevant Quran reference within a longer narration; editorial titles/context are not hadith."
     },
     {
@@ -1064,14 +1064,16 @@
     "Quran must come from a licensed checksum-pinned corpus, not this research or AI memory."
   ],
   "expansionReview": {
-    "date": "2026-09-16",
+    "date": "2026-09-20",
     "notes": [
       "2026-09-05: the second expansion followed the Hisn al-Muslim chapter order for morning, evening, after-prayer and bedtime, admitting only narrations whose grade on the inspected page was sahih or hasan. The 2026-09-16 note below relaxes that to allow a weak narration whose grade is shown.",
       "Added texts were sliced from the inspected narration wording, not retyped, so no character is introduced by an editor.",
       "Morning/evening Kursi stays out: the narration tying it to morning and evening is graded ضعيف by Al-Albani (ضعيف الجامع 5769, ضعيف الترغيب 390, ضعيف الترمذي 2879), إسناده ضعيف by Al-Nawawi and ضعيف by Ibn Baz. Bedtime Kursi rests on Bukhari 2311 and is unaffected.",
       "Did not target a fixed collection size; entries were added or refused one at a time on their own source page.",
       "2026-09-16: four widely practised morning/evening narrations that Al-Albani weakens (Abu Dawud 5069, 5072, 5073, 5084) are now shown with their grade printed on the card, following Ibn Baz and the jumhur, who act on a weak narration in fada'il. Abu Dawud 5081 (حسبي الله ×7) stays out because the same page grades it موضوع, which no such allowance covers. This is a disclosure choice, not a claim that the four are authentic.",
-      "2026-09-16: added a waking collection from Hisn al-Muslim's opening chapter (Bukhari 6312, Bukhari 1154, Muslim 763b) and two general remembrances (Muslim 2695, Bukhari 6346). All five are in the Sahihayn. The bedtime السجدة والملك reading was refused: the chain on Tirmidhi 2892 is graded ضعيف مقطوع by Al-Albani, which is weaker than the weak-but-marfu' narrations this project shows."
+      "2026-09-16: added a waking collection from Hisn al-Muslim's opening chapter (Bukhari 6312, Bukhari 1154, Muslim 763b) and two general remembrances (Muslim 2695, Bukhari 6346). All five are in the Sahihayn. The bedtime السجدة والملك reading was refused: the chain on Tirmidhi 2892 is graded ضعيف مقطوع by Al-Albani, which is weaker than the weak-but-marfu' narrations this project shows.",
+      "2026-09-20: every record's displayed text was re-read against its cited narration; all 50 source URLs were opened again and matched, where a page renders no Arabic, against the checksum-comparable Sunnah.com mirror by the page's own in-book reference. No wording or grade changed. Abu Dawud 5082 puts ثلاث مرات on قل هو الله أحد والمعوذتين as one reading, so the three surahs became a single card with a single count of three; the earlier three-card split asked for nine readings. Bukhari 5017 and Abu Dawud 1523 were merged the same way.",
+      "2026-09-20: the Hisn al-Muslim morning/evening chapter was walked item by item. Everything in it is carried except the entries refused below, plus أمسينا على فطرة الإسلام: dorar.net/h/wco7YVhF turns out to carry one combined أصبحنا-and-أمسينا formula rather than an evening wording, so there is nothing to show on an evening card without manufacturing a variant. لا إله إلا الله ×100 and أستغفر الله ×100 stay in the general collection because both narrations say في اليوم rather than إذا أصبح."
     ],
     "excluded": [
       {

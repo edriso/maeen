@@ -81,7 +81,6 @@ export function buildContent() {
   assert.deepEqual(Object.keys(manifest).sort(), [
     'data/quran-uthmani.txt',
     'data/sources.json',
-    'data/surah-names.json',
   ]);
   for (const [path, expected] of Object.entries(manifest))
     assert.equal(
@@ -97,8 +96,7 @@ export function buildContent() {
     if (m) corpus[`${m[1]}:${m[2]}`] = m[3];
   }
   assert.equal(Object.keys(corpus).length, 6236);
-  const names = read('data/surah-names.json'),
-    collections = read('content/collections.json');
+  const collections = read('content/collections.json');
   const groupIds = new Set(collections.map((group) => group.id));
   assert.equal(groupIds.size, collections.length);
   const items = [];
@@ -152,19 +150,14 @@ export function buildContent() {
       });
     else if (source.quranRefs) {
       validateCount(source.count, source.countKind);
-      source.quranRefs.forEach((ref, index) =>
-        items.push({
-          ...basic,
-          id: source.quranRefs.length > 1 ? `${source.id}-${index}` : source.id,
-          title:
-            source.quranRefs.length > 1
-              ? `سورة ${names[ref.split(':')[0]].name}`
-              : source.title,
-          text: '',
-          quran: resolveRefs([ref], corpus),
-          count: source.count,
-        }),
-      );
+      // Every reference in one record is read together, so it stays one card:
+      // the narration counts the whole reading, not each surah separately.
+      items.push({
+        ...basic,
+        text: '',
+        quran: resolveRefs(source.quranRefs, corpus),
+        count: source.count,
+      });
     } else {
       validateCount(source.count, source.countKind);
       assert.ok(source.text);

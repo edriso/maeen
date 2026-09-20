@@ -74,8 +74,15 @@ and the source panel says so. Do not present such wording as a verbatim quotatio
 ## Collection coverage and variant review
 
 The morning/evening collections are selected readings, not a fixed religious checklist.
-The card count depends on the selected narrations and whether separate prayers/surahs
-have separate reading cards. Never add texts just to reach a requested numerical total.
+The card count depends on the selected narrations. Never add texts just to reach a
+requested numerical total.
+
+A record's `quranRefs` resolve into one card, whatever the reference covers: a verse, a
+surah, a range, or the three surahs a narration names in one breath. The count on the
+record then belongs to that whole reading, which is what the narration says. Abu Dawud
+5082 puts ثلاث مرات on «قل هو الله أحد والمعوذتين» together, not on each surah, so three
+cards at three repetitions each would ask for triple what the matn asks. The same holds
+for Bukhari 5017 at bedtime and Abu Dawud 1523 after prayer.
 
 Collections follow the Hisn al-Muslim chapter order, waking first. The waking collection
 covers that book's opening chapter from the Sahihayn: the praise on waking, the dhikr for
@@ -104,12 +111,20 @@ outside what this project can cite, so it waits for qualified review. The bedtim
 unaffected and rests on Bukhari 2311. This selection does not rule on a reader's practice or
 claim consensus on grading.
 
-Two verified candidates are held back only for a plumbing reason, not a grading one:
-`أمسينا على فطرة الإسلام` (سبل الهدى والرشاد 7/258, https://dorar.net/h/wco7YVhF — the same
-narration is إسناده صحيح at al-Iraqi and حسن at al-Suyuti) and آية الكرسي دبر كل صلاة
-(الصحيح المسند 478, https://dorar.net/h/v2xoKlbX, and صحيح at al-Albani in صحيح الجامع 6464).
-Neither is in the six books Sunnah.com serves, so each needs its own line in the
-`verifiedLinks` allowlist in `scripts/content.mjs` before its record can be added.
+Two candidates are still out, and neither is in the six books Sunnah.com serves, so each
+would also need its own line in the `verifiedLinks` allowlist in `scripts/content.mjs`.
+
+آية الكرسي دبر كل صلاة (الصحيح المسند 478, https://dorar.net/h/v2xoKlbX, and صحيح at
+al-Albani in صحيح الجامع 6464) is blocked by that allowlist alone.
+
+`أمسينا على فطرة الإسلام` is not: re-reading https://dorar.net/h/wco7YVhF on 2026-09-20
+shows one formula covering both ends of the day — «أصبَحنا على فِطرةِ الإسلامِ، وأمسَينا
+على فِطرةِ الإسلامِ...» — graded `[رجاله] رجال الصحيح` by محمد بن يوسف الصالحي in
+سبل الهدى والرشاد 7/258. There is no evening-only wording on that page, so an evening card
+would mean either showing a text that also says أصبحنا or re-inflecting the verb, and this
+project does not manufacture morning/evening variants. Morning keeps its own narration
+(نتائج الأفكار 2/401). The evening side waits for a narration that states it, or for
+qualified review, not for plumbing.
 
 ## How source pages were read
 

@@ -1,5 +1,48 @@
 # Verification
 
+## 2026-09-20 — one card per Quran reading, and a full re-read of every source
+
+- `quranRefs` no longer split into one card per surah. The three surahs read together are
+  now one card in morning, evening, after prayer and before sleep, so the collections went
+  from 66 to 60 cards: waking 3, morning 19, evening 17, prayer 10, sleep 15, general 8.
+- This is a count fix, not only a layout one. Abu Dawud 5082 says «قل هو الله أحد
+  والمعوذتين حين تمسي وحين تصبح ثلاث مرات» — the three repetitions cover the whole
+  reading. Three cards at three each asked for nine readings where the matn asks for
+  three. Bukhari 5017 (×3 at bedtime) and Abu Dawud 1523 (after prayer) read the same way.
+  The morning/evening card is titled with the narration's own wording, and its context no
+  longer says «تقرأ كل سورة ثلاث مرات».
+- `data/surah-names.json` only existed to title those split cards, so it is removed
+  along with its digest. The manifest now pins the Quran corpus and the source records.
+- Every displayed text was re-read against its cited narration: all 50 source URLs were
+  fetched through the public reader proxy, and where a page renders no Arabic block the
+  matn came from the checksum-comparable Sunnah.com mirror
+  (`cdn.jsdelivr.net/gh/fawazahmed0/hadith-api`), matched by the page's own in-book
+  reference. Every card's Arabic is a verbatim slice of its narration except the twelve
+  places the records already document: the Hisn al-Muslim evening inflections (Abu Dawud
+  5069, 5073, 5084), the expanded morning form of Muslim 2723 (شرح حصن المسلم, lesson 77),
+  the أراه قال فيهن interjection inside Muslim 2723b, the عوراتي variant Abu Dawud 5074
+  attributes to عثمان بن أبي شيبة, and the tasbih segments, which the matn reports as
+  actions (سبّح، حمد، كبّر) rather than quoting. Every grade on the card matches the grade
+  line on its page.
+- Checked against the Hisn al-Muslim morning/evening chapter: the collections carry every
+  item in it except the four with recorded reasons — آية الكرسي and حسبي الله ×7 and
+  الصلاة على النبي عشرًا on their grades, and أمسينا على فطرة الإسلام, whose page turns out
+  to carry a single combined morning-and-evening formula rather than an evening wording
+  (see docs/content-policy.md; the earlier note calling that a plumbing block was wrong).
+  لا إله إلا الله ×100 and أستغفر الله ×100 stay in the general collection because both
+  narrations say في اليوم, not إذا أصبح.
+- `npm run check` (60 cards, digests, positions, 28 tests, strict TypeScript, oxlint),
+  `npm run build` and the static-output check all pass.
+
+Not verified in this round:
+
+- No browser was available, so the merged card was not seen rendered. It resolves to 538
+  characters across fifteen verses, well under `waking-imran` at 1,844, and the reader
+  already lays out multi-verse cards; still, look at it before publishing. Verse numbers
+  restart at ﴿١﴾ for each surah, which each surah's own basmala separates.
+- The scope was the reading cards and their sources. Timing, city and gesture behaviour
+  were not re-tested; the 2026-09-16 audit below still stands.
+
 ## 2026-09-16 — waking collection, wider city list, timing audit
 
 - Collections grew from 61 to 66 reading cards and from five to six: a new waking
