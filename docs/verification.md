@@ -1,5 +1,19 @@
 # Verification
 
+## 2026-09-20 — collection icons
+
+- The "المقترح الآن" button drew a hardcoded `Sunrise` whatever it was suggesting, so a
+  general or evening suggestion wore the morning icon and contradicted the row beneath it.
+  It now takes the suggested collection's own icon from the same map the list uses.
+- أذكار عامة moved from a heart to a leaf. The heart read as a like button — a tap target
+  rather than a label — which is the opposite of what this list does. The leaf keeps the
+  property the heart was chosen for: it names no time, so it stays outside the family of
+  five occasion icons instead of joining it.
+- Checked in the built output at three clocks: 03:30 suggests أذكار عامة with a leaf,
+  08:00 suggests أذكار الصباح with a sunrise, 18:00 suggests أذكار المساء with a sunset.
+  The suggestion icon matches its row in all three, and the list reads alarm-clock,
+  sunrise, sunset, sun, moon, leaf.
+
 ## 2026-09-20 — the merged card, seen rendered
 
 - Each surah on a card now opens its own block (`groupSurahs` in `lib/core.mjs`, `.surah`

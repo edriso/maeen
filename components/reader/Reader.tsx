@@ -16,7 +16,7 @@ import {
   Check,
   ChevronDown,
   Grid2x2,
-  Heart,
+  Leaf,
   Minus,
   Monitor,
   Moon,
@@ -88,7 +88,7 @@ const icons: Record<string, typeof Sun> = {
   evening: Sunset,
   prayer: Sun,
   sleep: Moon,
-  general: Heart,
+  general: Leaf,
 };
 /** The city list is long, so the picker groups it the way the data already does. */
 const cityRegions = [
@@ -144,6 +144,8 @@ export function Reader() {
   const last = index === selectedItems.length - 1;
   const Icon = icons[collection];
   const recommendation = now ? suggestion(now, preferences) : null;
+  // The suggestion names a collection, so it wears that collection's own icon.
+  const SuggestedIcon = icons[recommendation?.id ?? collection];
   // The hint stays one short line; the source panel carries the full wording.
   const repetitions =
     item.countLabel ||
@@ -583,7 +585,7 @@ export function Reader() {
                 className="time-suggestion"
                 onClick={() => choose(recommendation.id, true)}
               >
-                <Sunrise size={21} />
+                <SuggestedIcon size={21} />
                 <span>
                   <strong>
                     المقترح الآن:{' '}
