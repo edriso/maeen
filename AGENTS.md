@@ -1,4 +1,4 @@
-# زادي — contributor rules
+# مَعين — contributor rules
 
 Read docs/content-policy.md before editing any remembrance text, count, or timing.
 This is a small Arabic remembrance reader, not a fatwa service or a measure of faith.

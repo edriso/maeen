@@ -1,4 +1,7 @@
-# زادي
+# مَعين
+
+مَعين: مصدر ماء جارٍ لا ينقطع، أو ماء ظاهر سهل الوصول إليه؛ ويُستخدم مجازًا بمعنى مصدر
+الخير والعطاء. فالاسم يعطي إحساسًا بأن الذكر مصدر مستمر ترتوي منه الروح.
 
 A quiet, mobile-first Arabic remembrance reader. One dhikr per screen, white surfaces,
 generous space, light/dark themes, local fonts, bounded text size, and a source, grade
@@ -20,8 +23,8 @@ The server prints its local URL. Preview serves the exported `out/` folder on po
 For a production-like repository build and preview:
 
 ```sh
-GITHUB_REPOSITORY=edriso/zaadi npm run build
-BASE_PATH=/zaadi npm run preview
+GITHUB_REPOSITORY=edriso/maeen npm run build
+BASE_PATH=/maeen npm run preview
 ```
 
 ## Reading

@@ -36,7 +36,7 @@ export function useWebMcp(snapshot: Snapshot, actions: Actions) {
     const lifecycle = new AbortController();
     const tools: Tool[] = [
       {
-        name: 'zaadi_read_current',
+        name: 'maeen_read_current',
         description:
           'Read the current collection, card, and text-size preference. Does not record recitation.',
         inputSchema: {
@@ -48,7 +48,7 @@ export function useWebMcp(snapshot: Snapshot, actions: Actions) {
         execute: () => current.current?.snapshot,
       },
       {
-        name: 'zaadi_open_collection',
+        name: 'maeen_open_collection',
         description:
           'Open a remembrance collection at its first card and reset this session’s repetition counts.',
         inputSchema: {
@@ -72,7 +72,7 @@ export function useWebMcp(snapshot: Snapshot, actions: Actions) {
         },
       },
       {
-        name: 'zaadi_set_text_size',
+        name: 'maeen_set_text_size',
         description:
           'Set the reading text scale between 0.8 and 1.6. Larger text may scroll.',
         inputSchema: {

@@ -4,8 +4,8 @@ import { fonts, fontCss } from '@/lib/fonts.mjs';
 import { bootstrapAppearance, STORAGE } from '@/lib/appearance.mjs';
 import './globals.css';
 export const metadata: Metadata = {
-  title: 'زادي | ذكر يرافق يومك',
-  icons: { icon: `${basePath}/zaadi-icon.svg` },
+  title: 'مَعين | ذكر يرافق يومك',
+  icons: { icon: `${basePath}/maeen-icon.svg` },
   description:
     'أذكار موثقة، ذكر واحد في كل شاشة. اختر أذكار الصباح والمساء وما بعد الصلاة وقبل النوم، واقرأ على مهل.',
 };

@@ -291,7 +291,7 @@ function appearanceHarness({ stored, denied = false } = {}) {
   );
   return {
     dataset,
-    ready: () => events.get('zaadi:ready')?.(),
+    ready: () => events.get('maeen:ready')?.(),
     timeout: () => timeout(),
     loaded: () => resolveFonts([{}]),
   };

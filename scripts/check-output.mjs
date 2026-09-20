@@ -10,19 +10,19 @@ assert.ok(
 const base = basePath;
 const html = readFileSync(`${directory}/index.html`, 'utf8');
 assert.ok(html.includes('lang="ar"') && html.includes('dir="rtl"'));
-assert.ok(html.includes('زادي'));
+assert.ok(html.includes('مَعين'));
 assert.ok(
   !html.includes('user-scalable=no') && !html.includes('maximum-scale=1'),
   'Do not disable browser zoom',
 );
-assert.ok(html.includes('/zaadi-icon.svg'), 'Missing Zaadi tab icon');
+assert.ok(html.includes('/maeen-icon.svg'), 'Missing Maeen tab icon');
 assert.equal(
   [...html.matchAll(/as="font"/g)].length,
   3,
   'Preload each local font subset',
 );
 assert.ok(
-  html.includes('zaadi:ready') && html.includes('font-display:block'),
+  html.includes('maeen:ready') && html.includes('font-display:block'),
   'Missing first-paint font gate',
 );
 const files = [];

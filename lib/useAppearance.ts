@@ -29,7 +29,7 @@ export function useAppearance(
     let second = 0;
     const first = requestAnimationFrame(() => {
       second = requestAnimationFrame(() =>
-        window.dispatchEvent(new Event('zaadi:ready')),
+        window.dispatchEvent(new Event('maeen:ready')),
       );
     });
     return () => {

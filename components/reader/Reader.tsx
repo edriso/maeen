@@ -374,7 +374,7 @@ export function Reader() {
         انتقل إلى نص الذكر
       </button>
       <header className="reader-header">
-        <span className="wordmark">زادي</span>
+        <span className="wordmark">مَعين</span>
         <button
           className="collection-chip"
           aria-label={`${group.title}، الذكر ${index + 1} من ${selectedItems.length}. افتح قائمة الأذكار`}
@@ -924,7 +924,7 @@ export function Reader() {
                 <output className="storage-message">{storageMessage}</output>
               )}
               <a
-                href="https://github.com/edriso/zaadi/issues"
+                href="https://github.com/edriso/maeen/issues"
                 className="external-link"
               >
                 أبلغ عن خطأ <ExternalLink size={14} />
@@ -982,7 +982,7 @@ export function Reader() {
               مراجعة شرعية متخصصة. إذا وجدت خطأ، فأعنّا على تصحيحه.
             </p>
             <a
-              href="https://github.com/edriso/zaadi/issues"
+              href="https://github.com/edriso/maeen/issues"
               className="external-link"
             >
               أبلغ عن خطأ <ExternalLink size={14} />

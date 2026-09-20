@@ -123,7 +123,7 @@ Not verified in this round:
 - Strict TypeScript and lint pass. The only accessibility lint exceptions are the
   deliberately focusable, keyboard-scrollable reading region; it is not mislabelled
   as a button. It has visible arrow-button alternatives.
-- Production static export succeeds with the repository base path /zaadi. Output
+- Production static export succeeds with the repository base path /maeen. Output
   validation checks Arabic/RTL metadata, the absence of zoom restrictions, local fonts,
   and referenced assets. Pages staging strips the physical repository directory while
   retaining URL prefixes, as required by GitHub Pages project hosting.
