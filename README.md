@@ -108,7 +108,8 @@ site.config.mjs       one repository-aware base-path definition
 
 The generated Sites scaffold uses React, TypeScript, Vinext and Vite. Static export
 requires no server after deployment. The requested hosting target is GitHub Pages;
-no Sites project or other hosting account is created. Supplied shadcn packages/config
+no Sites project or other hosting account is created, so the scaffold's Cloudflare
+deploy tooling was removed rather than kept unused. Supplied shadcn packages/config
 remain available; unused starter component source was removed. Added libraries are
 Adhan.js, local Cairo/Amiri fonts, and the scaffold's Lucide icons.
 

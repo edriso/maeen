@@ -89,7 +89,9 @@ Correctness, readable Arabic, and a quiet reading experience come first.
   Preserve no-JavaScript readability and respect reduced motion.
 - Text size/location/theme/minimal-mode preferences may persist locally. Reading counts are session-only;
   revisiting a new occasion starts fresh. No external religious API at runtime.
-- Keep dependencies purposeful, package lock checked in, scripts reproducible.
+- Keep dependencies purposeful, package lock checked in, scripts reproducible. A package
+  the build never loads is not free: it still reaches the lockfile and its advisories.
+  Do not reintroduce deploy tooling for a host this project does not publish to.
 
 ## Delivery
 

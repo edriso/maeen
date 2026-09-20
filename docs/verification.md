@@ -1,5 +1,34 @@
 # Verification
 
+## 2026-09-20 — the sharp advisory, fixed by deleting what pulled it in
+
+- Dependabot flagged `sharp` <0.35.4 as high (GHSA-rgj7-g3m4-5g8c: libheif
+  GHSA-g89c-p67h-r497 and GHSA-2jg2-4ch7-h545). `npm audit` showed four high alerts on
+  one chain: `@cloudflare/vite-plugin` → `miniflare` → `sharp`, plus `wrangler`.
+- Nothing in this project loads any of it. `vite.config.ts` registers only `vinext()`,
+  `next.config.ts` is a static export, the one workflow deploys to GitHub Pages, and
+  there is no `wrangler.toml`. They are scaffold for a host this project is told not to
+  publish to, so they were removed rather than bumped: `@cloudflare/vite-plugin`,
+  `wrangler` and `@cloudflare/workers-types`, with the last also dropped from the
+  tsconfig `types` list and `/.wrangler/` dropped from `.gitignore`.
+- That takes the lockfile from 701 entries to 643, removing 58 and adding none. `sharp`,
+  `libvips` and the `workerd` binaries are gone from the tree entirely, so the advisory
+  has nothing left to attach to. `npm audit` reports 0 vulnerabilities.
+- Bumping instead would have kept an unused native image library, and a repo that never
+  touches an image would keep inheriting every libvips advisory.
+- Verified on a clean tree, not just the existing `node_modules`: `npm ci` from the
+  committed lockfile succeeds (138 packages, 0 vulnerabilities), then `npm run check`
+  (60 cards, 30 tests, strict TypeScript, oxlint), `npm run build` and the static-output
+  check (25 files) all pass, and `tsc` was rerun with `tsconfig.tsbuildinfo` deleted so
+  the dropped `@cloudflare/workers-types` could not survive in an incremental cache.
+- The rebuilt output was driven in the browser and reads as before.
+
+Not verified in this round:
+
+- `@openai/sites-vite-plugin` is also in devDependencies and also unreferenced by
+  `vite.config.ts`. It carries no advisory, so it was left alone rather than swept up
+  with a security fix.
+
 ## 2026-09-20 — the last card's Next button
 
 - On the last card the Next button now reads «تم بفضل الله» instead of a disabled
