@@ -11,23 +11,34 @@
   publish to, so they were removed rather than bumped: `@cloudflare/vite-plugin`,
   `wrangler` and `@cloudflare/workers-types`, with the last also dropped from the
   tsconfig `types` list and `/.wrangler/` dropped from `.gitignore`.
-- That takes the lockfile from 701 entries to 643, removing 58 and adding none. `sharp`,
+- A follow-up removed `@openai/sites-vite-plugin` on the same reasoning: also in
+  devDependencies, also never loaded by `vite.config.ts`, and for the same hosting the
+  project does not publish to. It carried no advisory, so it was taken out as tidying
+  after the security fix rather than as part of it. `.openai/hosting.json` stays: it is a
+  one-line declaration of the output directory, not code, and it brings no packages.
+- That takes the lockfile from 701 entries to 642, removing 59 and adding none. `sharp`,
   `libvips` and the `workerd` binaries are gone from the tree entirely, so the advisory
   has nothing left to attach to. `npm audit` reports 0 vulnerabilities.
 - Bumping instead would have kept an unused native image library, and a repo that never
   touches an image would keep inheriting every libvips advisory.
 - Verified on a clean tree, not just the existing `node_modules`: `npm ci` from the
-  committed lockfile succeeds (138 packages, 0 vulnerabilities), then `npm run check`
-  (60 cards, 30 tests, strict TypeScript, oxlint), `npm run build` and the static-output
-  check (25 files) all pass, and `tsc` was rerun with `tsconfig.tsbuildinfo` deleted so
-  the dropped `@cloudflare/workers-types` could not survive in an incremental cache.
-- The rebuilt output was driven in the browser and reads as before.
+  committed lockfile succeeds (526 packages installed, 0 vulnerabilities), then
+  `npm run check` (60 cards, 30 tests, strict TypeScript, oxlint), `npm run build` and
+  the static-output check (25 files) all pass, and `tsc` was rerun with
+  `tsconfig.tsbuildinfo` deleted so the dropped `@cloudflare/workers-types` could not
+  survive in an incremental cache.
+- Both removals were re-verified together from a clean `npm ci`: 525 packages installed
+  (526 before this second removal), 0 vulnerabilities, and `npm run check`,
+  `npm run build`, the static-output check and `oxfmt --check` all pass, with the rebuilt
+  output driven in the browser again.
+- devDependencies are now `@tailwindcss/postcss`, the three `@types` packages, the two
+  Vite plugins Vinext needs, the three ox tools, `tailwindcss`, `typescript` and `vite`,
+  each of which the build or a script loads.
 
 Not verified in this round:
 
-- `@openai/sites-vite-plugin` is also in devDependencies and also unreferenced by
-  `vite.config.ts`. It carries no advisory, so it was left alone rather than swept up
-  with a security fix.
+- The shadcn packages in `dependencies` are unreferenced too, but the README records
+  keeping them on purpose, so they were left where they are rather than swept up here.
 
 ## 2026-09-20 — the last card's Next button
 
