@@ -38,6 +38,7 @@ import {
   keyboardAction,
   cities,
   clampZoom,
+  groupSurahs,
   MAX_ZOOM,
   MIN_ZOOM,
   parsePreferences,
@@ -431,13 +432,17 @@ export function Reader() {
           style={{ fontSize: Math.max(16, base * preferences.zoom) }}
         >
           {item.quran.length
-            ? item.quran.map((verse) => (
-                <span key={verse.reference}>
-                  {verse.text}
-                  <span className="verse-number">
-                    {' '}
-                    ﴿{referenceNumber(verse.ayah)}﴾{' '}
-                  </span>
+            ? groupSurahs(item.quran).map((group) => (
+                <span className="surah" key={group.surah}>
+                  {group.verses.map((verse) => (
+                    <span key={verse.reference}>
+                      {verse.text}
+                      <span className="verse-number">
+                        {' '}
+                        ﴿{referenceNumber(verse.ayah)}﴾{' '}
+                      </span>
+                    </span>
+                  ))}
                 </span>
               ))
             : item.text}

@@ -13,6 +13,7 @@ import {
   swipeDirection,
   boundedIndex,
   keyboardAction,
+  groupSurahs,
   referenceNumber,
 } from '../lib/core.mjs';
 import {
@@ -115,6 +116,22 @@ test('navigation does not wrap at either end', () => {
 });
 test('a narration suffix survives visible formatting', () =>
   assert.equal(referenceNumber('597a'), '٥٩٧a'));
+test('surahs read together share one card but not one block', () => {
+  const verses = ['112:1', '112:2', '113:1', '114:1', '114:2'].map(
+    (reference) => ({ reference }),
+  );
+  assert.deepEqual(
+    groupSurahs(verses).map((group) => [group.surah, group.verses.length]),
+    [
+      ['112', 2],
+      ['113', 1],
+      ['114', 2],
+    ],
+  );
+  // One surah, however many verses, stays a single block; nothing has no block.
+  assert.equal(groupSurahs(verses.slice(0, 2)).length, 1);
+  assert.deepEqual(groupSurahs([]), []);
+});
 test('Quran ranges preserve source strings and reject unknown references', () => {
   assert.deepEqual(
     resolveRefs(['112:1-2'], { '112:1': 'first', '112:2': 'second' }).map(

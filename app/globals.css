@@ -293,6 +293,13 @@ kbd {
   line-height: 2.5;
   font-weight: 400;
 }
+/* One reading, but each surah opens on its own line. */
+.surah {
+  display: block;
+}
+.surah + .surah {
+  margin-block-start: 1.4em;
+}
 .verse-number {
   font-size: 0.55em;
   white-space: nowrap;

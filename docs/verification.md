@@ -1,5 +1,26 @@
 # Verification
 
+## 2026-09-20 — the merged card, seen rendered
+
+- Each surah on a card now opens its own block (`groupSurahs` in `lib/core.mjs`, `.surah`
+  in the stylesheet) with a 1.4em break between them, so the three no longer read as one
+  run of text. A card holding one surah is still one block, and the break is in `em`, so
+  it scales with whatever size the fit-text hook settles on.
+- This round had a browser, which closes the caveat left below. Driving the built static
+  output in headless Chrome at 390×844: the morning card is three blocks at 19px with
+  27px breaks, and the reading area fits it exactly with nothing clipped. Bedtime
+  (المعوذات مع النفث) and after-prayer (المعوذات بعد الصلاة, now last at 10/10) render the
+  same. `خواتيم آل عمران` is one block at the 18px floor and still scrolls, unchanged.
+- Counting and undo were exercised on the merged card: three taps count ١، ٢، ٣ and then
+  advance to أصبحنا وأصبح الملك لله, and undo returns to the card at two. The source panel
+  shows حسن؛ حسنه الألباني, links Abu Dawud 5082 and opens the verses at tanzil.net/#112:1.
+- Swept 320×568, 390×844, 844×390 landscape, 1280×800, dark, minimal mode and text zoom at
+  80% and 160%. Three blocks everywhere, nothing clipped in any of them. The card needs
+  scrolling at 320×568 (258px over), in a short landscape window (87px over) and at 160%
+  zoom (635px over). That is the documented fit-text floor plus scrolling, the same
+  fallback `waking-imran` already relies on, and the gap is not what causes it: the merged
+  reading is simply longer than a 320px-wide screen holds.
+
 ## 2026-09-20 — one card per Quran reading, and a full re-read of every source
 
 - `quranRefs` no longer split into one card per surah. The three surahs read together are

@@ -84,6 +84,11 @@ record then belongs to that whole reading, which is what the narration says. Abu
 cards at three repetitions each would ask for triple what the matn asks. The same holds
 for Bukhari 5017 at bedtime and Abu Dawud 1523 after prayer.
 
+One reading is not one paragraph. The reader groups the verses by surah and opens each
+surah on its own line, so the three run as three passages rather than one block of text;
+`groupSurahs` in `lib/core.mjs` does the grouping and a card of a single surah, however
+many verses, stays one block.
+
 Collections follow the Hisn al-Muslim chapter order, waking first. The waking collection
 covers that book's opening chapter from the Sahihayn: the praise on waking, the dhikr for
 stirring in the night, and the ten closing verses of Al ʿImran. `waking-imran` resolves
