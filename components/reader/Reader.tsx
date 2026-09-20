@@ -550,7 +550,9 @@ export function Reader() {
           aria-keyshortcuts="ArrowRight"
         >
           <ArrowRight size={19} aria-hidden="true" />
-          التالي
+          {/* A closing word at the end of the sequence, not a score: it credits
+              God's favour rather than counting what the reader got through. */}
+          {last ? 'تم بفضل الله' : 'التالي'}
         </button>
         <button
           disabled={index === 0}

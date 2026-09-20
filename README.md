@@ -62,7 +62,8 @@ BASE_PATH=/maeen npm run preview
   A double click or double tap is two repetitions and selects nothing; dragging across
   the text still selects it.
   A quiet fill inside the read button shows progress through that count.
-  Undo restores the previous count and card; the last card never wraps. A single-read
+  Undo restores the previous count and card; the last card never wraps, where Next is
+  disabled and reads «تم بفضل الله». A single-read
   label differs from prescribed repetition. Unrestricted dhikr has no target.
 - Optional “واجهة مختصرة” hides the collection button, supporting text and navigation
   buttons, retaining the text, repetition count and settings button. Swipe and keyboard

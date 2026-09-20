@@ -55,8 +55,12 @@ Correctness, readable Arabic, and a quiet reading experience come first.
 - The reading area is itself the labelled native button, with a visible tap hint, so a
   tap anywhere in that field counts and the reader never has to aim at the letters.
   Tap/click/Enter/Space records one repetition and advances only when its target is met.
-  Unrestricted texts advance without inventing a count. The last card never wraps. Undo
-  reverses a read and its automatic advance. Keep that button stable, and its scrolling
+  Unrestricted texts advance without inventing a count. The last card never wraps, and
+  the disabled Next button then reads «تم بفضل الله»: a closing word on reaching the end
+  of the sequence, worded to credit God's favour rather than the reader. Keep it that
+  way. It must not become a score: no count of what was read, no praise of the reader,
+  no claim that the collection is complete or exhaustive, and nowhere but the end of the
+  list. Undo reverses a read and its automatic advance. Keep that button stable, and its scrolling
   and text selection intact, so keyboard focus and long cards both survive.
 - Space reads from page or text focus, including after arrow navigation. Preserve native
   Space activation on other controls; suppress held-Space scrolling/repeated counting.

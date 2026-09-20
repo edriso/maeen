@@ -1,5 +1,32 @@
 # Verification
 
+## 2026-09-20 — the last card's Next button
+
+- On the last card the Next button now reads «تم بفضل الله» instead of a disabled
+  «التالي», so it closes the sequence instead of sitting there greyed with no reason.
+- The wording is the project owner's decision, made after the alternative was put to
+  them. The reservation is recorded rather than hidden: the button is disabled by `last`,
+  which is where the reader is standing, not by what was read, so it appears on arriving
+  at the end by swipe, by End or from the collection list as well as by reading through.
+  «بفضل الله» is what keeps it inside the project's rules — it credits God's favour
+  instead of scoring the reader, which is the line AGENTS.md draws. It stays a closing
+  word: no count, no praise of the reader, no claim the collection is exhaustive.
+- The earned wording remains separate, one row up: the read button turns into
+  «تمت القراءة» or «اكتمل العدد» only after the narrated count is actually recorded.
+- Checked in the built output on عند الاستيقاظ: cards 1 and 2 read «التالي» and are
+  enabled, card 3 reads «تم بفضل الله» and is disabled, recording the last card's own
+  reading leaves that label alone while the read button becomes «تمت القراءة», and
+  stepping back restores «التالي». Previous keeps «السابق» throughout.
+- `npm run check` (60 cards, 30 tests, strict TypeScript, oxlint), `npm run build`, the
+  static-output check and `oxfmt --check` pass.
+
+Not verified in this round:
+
+- The first card's Previous button still reads a disabled «السابق»; the same treatment
+  was left alone because it was not asked for, so the two ends are worded asymmetrically.
+- The Next arrow still sits beside the closing word on the last card. It keeps the footer
+  from shifting, but nobody judged how the pairing looks to a reader.
+
 ## 2026-09-20 — a double click reads twice and selects nothing
 
 - Double clicking the text used to select a word, and the highlight then blocked the read
