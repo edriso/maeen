@@ -1,5 +1,27 @@
 # Verification
 
+## 2026-09-20 — Next moves to the left edge, where RTL puts the next text
+
+- The footer read Next on the right with a right-pointing arrow, which disagreed with
+  the rest of the reader: the collection rows and the «افتح المقترح الآن» button already
+  use a left arrow for forward, because in RTL the next card lies to the left. Previous
+  now opens the row at the right edge and Next closes it at the left, each arrow
+  pointing the way it travels. `AGENTS.md` carried the old placement as a rule and was
+  updated with it.
+- Only the placement changed. `swipeDirection` and `keyboardAction` are untouched: a
+  rightward swipe and ArrowRight still advance, ArrowLeft and a leftward swipe still go
+  back, and each button keeps the `aria-keyshortcuts` of the key that fires it. The two
+  help sentences and the keyboard guide describe keys and swipes rather than sides, so
+  they were already correct and were left alone.
+- Verified in the built `out/index.html`: the footer renders السابق first (the right edge
+  under `dir="rtl"`) carrying the right chevron and `disabled` on the first card, then
+  التالي with the left chevron. No rule reverses the row at any breakpoint — the footer
+  is a plain `space-between` flex with no `row-reverse`, and the four media queries
+  change only heights and padding — so the order holds on phones, tablets, desktops and
+  short landscape windows, with the 48px buttons still above the 44px target.
+- `npm run check` (60 cards, 30 tests, strict TypeScript, oxlint), `npm run build`, the
+  static-output check (25 files) and `oxfmt --check` all pass.
+
 ## 2026-09-20 — every scaffold package the reader never loads
 
 - Following the security fix, the rest of the unused scaffold went too. Every import in

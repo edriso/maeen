@@ -50,7 +50,8 @@ Correctness, readable Arabic, and a quiet reading experience come first.
 - Quran: Amiri Quran, regular weight, line-height >=2.5. No Arabic letter spacing.
 - Keep browser pinch zoom available. Do not use user-scalable=no or maximum-scale.
 - Right arrow/right swipe = next; left arrow/left swipe = previous (user preference).
-  Place Next on the right and Previous on the left; icons and help must agree.
+  The next text lies to the left in RTL: place Next on the left and Previous on
+  the right, each arrow pointing the way it travels; icons and help must agree.
   Vertical scroll, text selection, multitouch, controls and canceled gestures must not navigate.
 - The reading area is itself the labelled native button, with a visible tap hint, so a
   tap anywhere in that field counts and the reader never has to aim at the letters.

@@ -543,23 +543,27 @@ export function Reader() {
             ? 'تمت القراءة'
             : `${referenceNumber(count)} / ${referenceNumber(item.count)}`}
       </output>
+      {/* RTL: the next text lies to the left, so Previous opens the row at the
+          right edge and Next closes it at the left, each arrow pointing the way
+          it travels. The keys and swipes are unchanged: ArrowRight and a
+          rightward swipe still advance. */}
       <footer className="reader-footer">
-        <button
-          disabled={last}
-          onClick={() => navigate(1)}
-          aria-keyshortcuts="ArrowRight"
-        >
-          <ArrowRight size={19} aria-hidden="true" />
-          {/* A closing word at the end of the sequence, not a score: it credits
-              God's favour rather than counting what the reader got through. */}
-          {last ? 'تم بفضل الله' : 'التالي'}
-        </button>
         <button
           disabled={index === 0}
           onClick={() => navigate(-1)}
           aria-keyshortcuts="ArrowLeft"
         >
+          <ArrowRight size={19} aria-hidden="true" />
           السابق
+        </button>
+        <button
+          disabled={last}
+          onClick={() => navigate(1)}
+          aria-keyshortcuts="ArrowRight"
+        >
+          {/* A closing word at the end of the sequence, not a score: it credits
+              God's favour rather than counting what the reader got through. */}
+          {last ? 'تم بفضل الله' : 'التالي'}
           <ArrowLeft size={19} aria-hidden="true" />
         </button>
       </footer>
