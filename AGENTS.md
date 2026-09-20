@@ -52,10 +52,12 @@ Correctness, readable Arabic, and a quiet reading experience come first.
 - Right arrow/right swipe = next; left arrow/left swipe = previous (user preference).
   Place Next on the right and Previous on the left; icons and help must agree.
   Vertical scroll, text selection, multitouch, controls and canceled gestures must not navigate.
-- The text is a labelled native button with a visible tap hint. Tap/click/Enter/Space
-  records one repetition and advances only when its target is met. Unrestricted texts
-  advance without inventing a count. The last card never wraps. Undo reverses a read
-  and its automatic advance. Keep the text button stable so keyboard focus survives.
+- The reading area is itself the labelled native button, with a visible tap hint, so a
+  tap anywhere in that field counts and the reader never has to aim at the letters.
+  Tap/click/Enter/Space records one repetition and advances only when its target is met.
+  Unrestricted texts advance without inventing a count. The last card never wraps. Undo
+  reverses a read and its automatic advance. Keep that button stable, and its scrolling
+  and text selection intact, so keyboard focus and long cards both survive.
 - Space reads from page or text focus, including after arrow navigation. Preserve native
   Space activation on other controls; suppress held-Space scrolling/repeated counting.
 - Reject held keys, accidental rapid taps, long presses, selection and drags (including
@@ -67,7 +69,8 @@ Correctness, readable Arabic, and a quiet reading experience come first.
   Alt+S/Z (Option on Mac) open settings or undo. Escape opens the collection list
   while reading and closes any open panel; holding it must not reopen a closed panel.
   Show the keyboard guide only at widths >=760px; shortcuts still work on smaller screens.
-- No invisible tap zones. Preserve the user's opt-in minimal boolean across refresh;
+- No invisible tap zones: the read button is the visible reading field and does only what
+  its hint says. Preserve the user's opt-in minimal boolean across refresh;
   older or invalid preferences default to the full interface.
 - Native dialog panels need a label, Escape/backdrop dismissal and focus restoration.
 - Preload versioned local font subsets before revealing the reader. Restore theme in

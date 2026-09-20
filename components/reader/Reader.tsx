@@ -127,8 +127,8 @@ export function Reader() {
   const [openingNote, setOpeningNote] = useState('');
   const [ready, setReady] = useState(false);
   const [now, setNow] = useState<Date | null>(null);
-  const viewport = useRef<HTMLElement>(null),
-    text = useRef<HTMLButtonElement>(null);
+  const viewport = useRef<HTMLButtonElement>(null),
+    text = useRef<HTMLSpanElement>(null);
   const tapAllowed = useRef(false);
   const lastReadAt = useRef(-Infinity);
   const gesture = useRef<Gesture | null>(null);
@@ -403,11 +403,13 @@ export function Reader() {
           <SlidersHorizontal size={20} />
         </button>
       </header>
-      {/* oxlint-disable jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-noninteractive-tabindex -- A scrollable reading region must be focusable for keyboard scrolling; arrow keys provide the same navigation as visible buttons. */}
-      <section
+      {/* The whole reading area is the read control, so a tap anywhere in it
+          counts, not only one that lands on the letters. */}
+      <button
+        type="button"
         className="reading-area"
         ref={viewport}
-        tabIndex={0}
+        aria-describedby="tap-hint"
         aria-label="نص الذكر؛ السهم الأيمن للتالي، والأيسر للسابق، والمسافة أو Enter لتسجيل قراءة"
         aria-keyshortcuts="ArrowLeft ArrowRight Home End Enter Space"
         onPointerDown={startPointer}
@@ -417,18 +419,16 @@ export function Reader() {
           tapAllowed.current = false;
           gesture.current = null;
         }}
+        onKeyDown={(event) => {
+          if (event.repeat && (event.key === 'Enter' || event.key === ' '))
+            event.preventDefault();
+        }}
+        onClick={(event) => {
+          if (event.detail === 0 || tapAllowed.current) recordReading();
+          tapAllowed.current = false;
+        }}
       >
-        <button
-          type="button"
-          aria-describedby="tap-hint"
-          onKeyDown={(event) => {
-            if (event.repeat && (event.key === 'Enter' || event.key === ' '))
-              event.preventDefault();
-          }}
-          onClick={(event) => {
-            if (event.detail === 0 || tapAllowed.current) recordReading();
-            tapAllowed.current = false;
-          }}
+        <span
           className={`dhikr-text ${item.quran.length ? 'quran' : ''}`}
           ref={text}
           style={{ fontSize: Math.max(16, base * preferences.zoom) }}
@@ -448,9 +448,8 @@ export function Reader() {
                 </span>
               ))
             : item.text}
-        </button>
-      </section>
-      {/* oxlint-enable jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-noninteractive-tabindex */}
+        </span>
+      </button>
       <div className="reading-meta">
         <p className="dhikr-title">{item.title}</p>
         <button className="source-button" onClick={() => openPanel('source')}>

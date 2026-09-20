@@ -253,6 +253,7 @@ kbd {
 }
 
 /* ── Reading area ──────────────────────────────────────────────────────── */
+/* The reading area is the read button itself, so the whole field responds. */
 .reading-area {
   min-height: 0;
   flex: 1;
@@ -261,11 +262,12 @@ kbd {
   touch-action: pan-y pinch-zoom;
   display: flex;
   flex-direction: column;
-  padding-block: 16px;
+  padding: 16px 0;
   scrollbar-width: thin;
   max-width: 790px;
   width: 100%;
   margin-inline: auto;
+  text-align: inherit;
 }
 .reading-area:focus-visible {
   outline: 2px solid var(--focus);
@@ -284,9 +286,6 @@ kbd {
   overflow-wrap: break-word;
   width: 100%;
   margin-block: auto;
-}
-.dhikr-text:focus-visible {
-  outline-offset: -3px;
 }
 .dhikr-text.quran {
   font-family: 'Amiri Quran', serif;

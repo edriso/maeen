@@ -1,5 +1,34 @@
 # Verification
 
+## 2026-09-20 — the reading area is the read button
+
+- The read control was a button wrapped around the letters inside a plain scrolling
+  section, so a tap in the empty field above or below the text did nothing. The section
+  is now the button itself and the text is a span inside it, which also removes the
+  second tab stop and the two jsx-a11y suppressions that the handlers-on-a-section
+  pattern needed. Layout is unchanged: the button keeps the section's flex, scroll,
+  `touch-action` and 16px block padding, and the card still renders at the same size.
+- Checked in the built output at 390×844. A tap in the top margin counts, a tap in the
+  bottom margin counts, a tap on the letters counts, and undo reverses each one.
+- The guards all survive the move, because they were already on the element that became
+  the button: a vertical drag does not count, a horizontal mouse drag neither counts nor
+  navigates, a 700ms press does not count, a click with text selected does not count, and
+  five auto-repeating Space presses record nothing.
+- Keyboard: Space and Enter record from the area, Right/Left navigate, focus stays on the
+  area across navigation, and Tab reaches it once with its own inset focus ring. A long
+  card (خواتيم آل عمران) still scrolls by wheel and by ArrowDown.
+- Minimal mode keeps the tab order at skip link, settings, reading area, and a tap on the
+  area counts there too.
+- `npm run check` (60 cards, 29 tests, strict TypeScript, oxlint), `npm run build`, the
+  static-output check and `oxfmt --check` pass.
+
+Not verified in this round:
+
+- Only Chromium, and only with synthetic pointer events. Real finger taps near the screen
+  edges, and Safari's handling of text selection inside a large button, were not tried.
+- The hint still reads «اضغط على النص لتسجيل قراءة». That is true but now understates the
+  target; the wording was left alone rather than changed without being asked.
+
 ## 2026-09-20 — collection icons
 
 - The "المقترح الآن" button drew a hardcoded `Sunrise` whatever it was suggesting, so a

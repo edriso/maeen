@@ -34,7 +34,8 @@ the reading area gets the space instead.
   reading is never interrupted by an automatic collection change.
 - A pure reading reducer makes counting and auto-advance atomic. Undo reverses both.
   Pointer movement guards separate deliberate text taps from scroll, drag and swipe.
-  The text button remains mounted across cards, preserving keyboard focus.
+  The reading area is the button, so the whole field is the target; it remains mounted
+  across cards, preserving keyboard focus.
 - Preferences use defensive, versioned localStorage access. Counts are memory-only and
   reset when switching collections or explicitly restarting them.
 - Each source and count is verified offline at build time against pinned records.

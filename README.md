@@ -57,8 +57,9 @@ BASE_PATH=/maeen npm run preview
 - Text fits between 18–42px at default size; user scale is 80–160%, with an absolute
   16px minimum. Large or long text scrolls. Short landscape windows allow page scrolling.
   Native browser zoom remains enabled.
-- The text and read button record one repetition, then advance when the narrated count
-  is complete. A quiet fill inside the read button shows progress through that count.
+- The reading area is the read button: a tap anywhere in that field, or the read button
+  below it, records one repetition, then advances when the narrated count is complete.
+  A quiet fill inside the read button shows progress through that count.
   Undo restores the previous count and card; the last card never wraps. A single-read
   label differs from prescribed repetition. Unrestricted dhikr has no target.
 - Optional “واجهة مختصرة” hides the collection button, supporting text and navigation
