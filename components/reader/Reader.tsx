@@ -283,6 +283,25 @@ export function Reader() {
       window.history.pushState(null, '', url);
     closePanel();
   };
+  // The wordmark is home: clear the collection hash and return to the
+  // time-appropriate suggestion, so a reader gets back to the opening screen
+  // by tapping the name instead of editing the address bar.
+  const goHome = () => {
+    const now = new Date();
+    const preferred = suggestion(now, preferences);
+    setNow(now);
+    setCollection(preferred.id);
+    dispatch({ type: 'reset' });
+    setOpeningNote(preferred.label);
+    const url = window.location.pathname + window.location.search;
+    if (
+      window.location.pathname +
+        window.location.search +
+        window.location.hash !==
+      url
+    )
+      window.history.pushState(null, '', url);
+  };
   const navigate = (delta: number) =>
     dispatch({ type: 'navigate', index: index + delta, items: selectedItems });
   const recordReading = useCallback(
@@ -385,7 +404,15 @@ export function Reader() {
         انتقل إلى نص الذكر
       </button>
       <header className="reader-header">
-        <span className="wordmark">مَعين</span>
+        <button
+          type="button"
+          className="wordmark"
+          aria-label="مَعين، العودة إلى الصفحة الأولى"
+          title="العودة إلى الصفحة الأولى"
+          onClick={goHome}
+        >
+          مَعين
+        </button>
         <button
           className="collection-chip"
           aria-label={`${group.title}، الذكر ${index + 1} من ${selectedItems.length}. افتح قائمة الأذكار`}

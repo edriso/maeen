@@ -30,23 +30,32 @@ import {
   buildContent,
 } from './content.mjs';
 test('source corpus and every occasion/count validate', () => buildContent());
-test('clock fallback has explicit non-prayer windows', () => {
+test('clock fallback spans the day: morning to Asr, evening into the night', () => {
   assert.equal(approximateCollection(3), 'general');
   assert.equal(approximateCollection(4), 'morning');
-  assert.equal(approximateCollection(12), 'general');
+  assert.equal(approximateCollection(12), 'morning');
+  assert.equal(approximateCollection(14), 'morning');
   assert.equal(approximateCollection(15), 'evening');
-  assert.equal(approximateCollection(21), 'general');
+  assert.equal(approximateCollection(21), 'evening');
+  assert.equal(approximateCollection(23), 'evening');
+  assert.equal(approximateCollection(0), 'general');
 });
-test('computed Fajr opens morning exactly at its boundary', () => {
+test('computed windows run Fajr→Asr and Asr→middle of the night', () => {
   const at = (hour) => new Date(`2026-09-05T${hour}:00:00Z`),
-    times = { fajr: at('04'), dhuhr: at('12'), asr: at('15'), isha: at('20') };
+    times = { fajr: at('04'), asr: at('15'), nightEnd: at('23') };
   assert.equal(chooseByTimes(at('03'), times), 'general');
   assert.equal(chooseByTimes(at('04'), times), 'morning');
-  assert.equal(chooseByTimes(at('12'), times), 'general');
+  assert.equal(chooseByTimes(at('12'), times), 'morning'); // forenoon is still morning
   assert.equal(chooseByTimes(at('15'), times), 'evening');
-  assert.equal(chooseByTimes(at('20'), times), 'general');
+  assert.equal(chooseByTimes(at('20'), times), 'evening'); // past Isha, before mid-night
+  assert.equal(chooseByTimes(at('22'), times), 'evening');
+  assert.equal(chooseByTimes(at('23'), times), 'general'); // the deep pre-dawn hours
   assert.equal(
     chooseByTimes(at('15'), { ...times, fajr: new Date(NaN) }),
+    null,
+  );
+  assert.equal(
+    chooseByTimes(at('15'), { ...times, nightEnd: new Date(NaN) }),
     null,
   );
 });

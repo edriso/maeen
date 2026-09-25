@@ -32,10 +32,12 @@ BASE_PATH=/maeen npm run preview
 - Opens a time-appropriate collection; direct `#waking`, `#morning`, `#evening`,
   `#prayer`, `#sleep`, and `#general` links override the automatic suggestion.
 - Without a chosen city: explicitly approximate device-clock suggestions read from your
-  own device clock. Morning is 04:00–12:00, evening 15:00–21:00, general otherwise.
-- With a chosen city: local Adhan.js calculations choose morning from Fajr to Dhuhr
-  and evening from Asr to Isha. Other times choose general remembrance. These are
-  navigation windows, not religious deadlines. Method and Asr convention are editable.
+  own device clock. Morning is 04:00–15:00, evening 15:00 until midnight, general in the
+  deep pre-dawn hours.
+- With a chosen city: local Adhan.js calculations choose morning from Fajr to Asr and
+  evening from Asr to the middle of the night. The deep pre-dawn hours choose general
+  remembrance. These are navigation windows, not religious deadlines. Method and Asr
+  convention are editable.
 - 35 cities are offered, grouped by region, each with its own timezone and a default
   calculation method for that region. Picking one is the only way to get calculated
   times: the app never asks for your location and never guesses a city for you.
@@ -43,10 +45,10 @@ BASE_PATH=/maeen npm run preview
   wherever your device thinks it is.
 - Waking, after-prayer and bedtime collections are selected manually, never inferred
   from the clock.
-- The screen carries one text and four small pieces of chrome: the wordmark, one button
-  naming the open collection and your place in it, settings, and the read and navigation
-  controls under the text. Everything else — timing explanation, sources, shortcuts —
-  lives inside the panels.
+- The screen carries one text and four small pieces of chrome: the wordmark (tap it to
+  return to the opening screen), one button naming the open collection and your place in
+  it, settings, and the read and navigation controls under the text. Everything else —
+  timing explanation, sources, shortcuts — lives inside the panels.
 - Swipe right for next / left for previous. Visible labelled arrow buttons and keyboard
   Right (next) / Left (previous) are alternatives. Vertical scroll, selection and multitouch do not navigate.
 - Space records a reading from page/text focus and advances when repetitions finish.

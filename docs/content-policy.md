@@ -14,10 +14,12 @@ this app ordinarily displays the complete text to be recited.
 
 Timing: default suggestions use the device clock and explicitly say they are approximate.
 City selection enables local calculations using Adhan.js, with a selectable method and
-Asr convention. Fajr–Dhuhr suggests morning, Asr–Isha suggests evening; other times
-suggest general remembrance. These are product routing windows, not claims that reading
-outside them is invalid. Never automatically choose waking, after-prayer or bedtime based
-on clock time alone. Manual selection is always available.
+Asr convention. Fajr–Asr suggests morning, Asr to the middle of the night (maghrib to the
+next Fajr, halved) suggests evening; the deep pre-dawn hours suggest general remembrance.
+The windows are deliberately generous, following the flexibility Ibn Baz describes below:
+they are product routing windows, not claims that reading outside them is invalid. Never
+automatically choose waking, after-prayer or bedtime based on clock time alone. Manual
+selection is always available.
 
 The city table in `lib/core.mjs` is the whole location story: each entry carries its own
 IANA zone, coordinates and the default calculation method for its region, and the picker

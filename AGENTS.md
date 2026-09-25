@@ -45,6 +45,10 @@ Correctness, readable Arabic, and a quiet reading experience come first.
   collection button that opens the list and shows the position, settings), the text, one
   title/source line, the read controls with one hint line, and Next/Previous. Explanations
   belong in the panels. Adding a band needs a reason stronger than convenience.
+- The wordmark is home: activating it clears the collection hash and returns to the
+  time-appropriate suggestion, so the reader gets back to the opening screen without
+  editing the address bar. It is a plain button, hidden with the rest of the chrome in
+  minimal mode. Do not turn it into a link that navigates away or leaves a stray hash.
 - Use 100dvh with safe-area padding. Fit text only within safe readable bounds.
   User text zoom is limited and may require vertical scrolling. Never crop Arabic marks.
 - Quran: Amiri Quran, regular weight, line-height >=2.5. No Arabic letter spacing.

@@ -1,5 +1,26 @@
 # Verification
 
+## 2026-09-25 — Wider morning/evening windows, and the wordmark returns home
+
+- The clock windows were narrow: morning stopped at Dhuhr and evening at Isha, so a reader
+  opening the app in the early afternoon or later in the night was routed to general
+  instead of the session they wanted. Both now follow the flexibility Ibn Baz describes
+  (already cited in `docs/content-policy.md`): morning runs Fajr→Asr, and evening runs
+  Asr→the middle of the night (maghrib to the next Fajr, halved, from Adhan's
+  `SunnahTimes`). Only the deep pre-dawn hours fall back to general. The device-clock
+  fallback widened to match: morning 04:00–15:00, evening 15:00 to midnight, general
+  before dawn. These stay routing windows, not rulings; manual selection and the labelled
+  high-latitude fallback are unchanged.
+- `chooseByTimes` now takes `{ fajr, asr, nightEnd }` and validates all three, so an
+  invalid solar event still drops to the approximate suggestion as before. The
+  `content-policy.md` and README window descriptions were updated to match.
+- The wordmark was inert, so the only way back to the opening screen was to edit the
+  address bar. It is now a plain button that clears the collection hash and reopens the
+  time-appropriate suggestion, mirroring a fresh visit. It stays hidden with the rest of
+  the chrome in minimal mode and leaves no stray hash. `AGENTS.md` carries the rule.
+- `npm run check` (60 cards, 30 tests, strict TypeScript, type-aware oxlint), `npm run
+  build`, the static-output check (25 files) and `oxfmt --check` all pass.
+
 ## 2026-09-20 — Next moves to the left edge, where RTL puts the next text
 
 - The footer read Next on the right with a right-pointing arrow, which disagreed with
